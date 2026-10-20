@@ -1,5 +1,122 @@
 \documentclass[11pt]{article}
 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{placeins}
+
+\title{BUSFIN 8200: Problem Set 2}
+\author{Xi Wang}
+\date{\today}
+
 \begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\subsection*{(a)}
+
+We have complete markets iff we can find a unique matrix $\Omega$ s.t.\ $X\Omega = I$, where
+\[
+X = \begin{bmatrix} 10 & 10 & 0 \\ 20 & 10 & 10 \\ 30 & 10 & 10 \end{bmatrix}, \qquad
+\Omega = \begin{bmatrix} | & | & | \\ w_1 & w_2 & w_3 \\ | & | & | \end{bmatrix},
+\]
+and each $w_i$ is a portfolio weight vector using A, B and C. For example, $(10, 20, 30)'$ is asset A's payoff across the three states.
+
+$X\Omega = I$ means
+\[
+X w_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \qquad
+X w_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \qquad
+X w_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}.
+\]
+
+Because $X$ is $3 \times 3$, $X\Omega = I$ has a unique solution iff $X$ is invertible, and
+\[
+X \text{ invertible} \iff \det(X) \neq 0 \iff \operatorname{rank}(X) = 3.
+\]
+\[
+X = \begin{bmatrix} 10 & 10 & 0 \\ 20 & 10 & 10 \\ 30 & 10 & 10 \end{bmatrix}
+= 10 \begin{bmatrix} 1 & 1 & 0 \\ 2 & 1 & 1 \\ 3 & 1 & 1 \end{bmatrix}.
+\]
+Row reduction:
+\begin{align*}
+\text{row 3} - \text{row 2}: &\quad \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 0 \\ 3 & 1 & 1 \end{bmatrix} \\
+\text{exchange rows 1 and 2}: &\quad \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 3 & 1 & 1 \end{bmatrix} \\
+\text{row 2} - \text{row 1}: &\quad \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 3 & 1 & 1 \end{bmatrix} \\
+\text{row 3} - 3\cdot\text{row 1} - \text{row 2}: &\quad \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\end{align*}
+Thus $\operatorname{rank}(X) = 3$ and $X$ is invertible. $\Omega = X^{-1}$ exists and is unique, with $X\Omega = XX^{-1} = I$. Thus, the market is complete.
+
+\subsection*{(b)}
+
+Let $X$ be the matrix of $N = 3$ non-redundant asset payoffs, let $P$ be the price vector of the original assets, and let $P_c = (q_1, q_2, q_3)'$ be the price vector of the contingent claims. Use the LOP to solve for $P_c$ as a function of $X$ and $P$:
+\[
+P = \begin{pmatrix} 16 \\ 8 \\ 6 \end{pmatrix}, \qquad
+X = \begin{bmatrix} 10 & 10 & 0 \\ 20 & 10 & 10 \\ 30 & 10 & 10 \end{bmatrix}.
+\]
+The LOP says that two assets with identical payoffs in every state of nature must have the same price. Therefore,
+\[
+X' P_c = P \quad\Longrightarrow\quad
+\begin{bmatrix} 10 & 20 & 30 \\ 10 & 10 & 10 \\ 0 & 10 & 10 \end{bmatrix}
+\begin{pmatrix} q_1 \\ q_2 \\ q_3 \end{pmatrix}
+= \begin{pmatrix} 16 \\ 8 \\ 6 \end{pmatrix}.
+\]
+Dividing everything by 10:
+\[
+\begin{cases}
+q_1 + 2q_2 + 3q_3 = 1.6 \\
+q_1 + q_2 + q_3 = 0.8 \\
+q_2 + q_3 = 0.6
+\end{cases}
+\quad\Longrightarrow\quad
+\begin{cases}
+q_1 = 0.2 \\
+q_2 = 0.4 \\
+q_3 = 0.2
+\end{cases}
+\]
+Thus, $P_c = (0.2, 0.4, 0.2)'$.
+
+\subsection*{(c)}
+
+\[
+P_D = \text{Payoff}(D) \cdot P_c
+= \begin{pmatrix} 30 & 20 & 10 \end{pmatrix}
+\begin{pmatrix} 0.2 \\ 0.4 \\ 0.2 \end{pmatrix}
+= 6 + 8 + 2 = 16.
+\]
+
+\subsection*{(d)}
+
+\[
+P(X) = E[MX] = \sum_{s=1}^{S} \pi(s) M(s) X(s).
+\]
+Since $q_s = \pi(s) M(s)$, we have $M(s) = q_s / \pi(s)$. With
+\[
+P_c = \begin{pmatrix} 0.2 \\ 0.4 \\ 0.2 \end{pmatrix}, \qquad
+\pi(s) = \begin{pmatrix} 1/4 \\ 1/2 \\ 1/4 \end{pmatrix}
+\quad\Longrightarrow\quad
+M(s) = \begin{pmatrix} 0.8 \\ 0.8 \\ 0.8 \end{pmatrix}.
+\]
+By definition, no arbitrage means that
+\begin{enumerate}
+  \item An asset with payoff $\geq 0$ must have price $\geq 0$.
+  \item An asset with payoff $\geq 0$ and a chance for payoff $> 0$ must have price $> 0$.
+\end{enumerate}
+We have $X \geq 0$, $\Pr(X > 0) > 0$, and $P(X) = E[MX] > 0$ (since $M > 0$). Thus, there is no arbitrage.
+
+Moreover, $P(X) = E[MX] = 0.8\, E[X]$. The SDF stays constant across the three states, which implies it is risk-neutral.
+
+\subsection*{(e)}
+
+\begin{align*}
+P_D = E[M X_D] &= \sum_{s=1}^{S} \pi(s) M(s) X_D(s) \\
+&= \tfrac14 \cdot 0.8 \cdot 30 + \tfrac12 \cdot 0.8 \cdot 20 + \tfrac14 \cdot 0.8 \cdot 10 \\
+&= 6 + 8 + 2 = 16.
+\end{align*}
+This is the same as in Q1(c).
 
 \end{document}
