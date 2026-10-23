@@ -206,6 +206,17 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT ./results/q3b_gmm_summary.tex
 INPUT ./results/q3b_gmm_summary.tex
 INPUT results/q3b_gmm_summary.tex
+INPUT ./results/q3c_gmm_summary.tex
+INPUT ./results/q3c_gmm_summary.tex
+INPUT results/q3c_gmm_summary.tex
+INPUT ./results/q3c_details.tex
+INPUT ./results/q3c_details.tex
+INPUT results/q3c_details.tex
+INPUT ./figures/q3c_gmm_objective.png
+INPUT ./figures/q3c_gmm_objective.png
+INPUT ./figures/q3c_gmm_objective.png
+INPUT ./figures/q3c_gmm_objective.png
+INPUT ./figures/q3c_gmm_objective.png
 INPUT solution.aux
 INPUT ./solution.out
 INPUT ./solution.out

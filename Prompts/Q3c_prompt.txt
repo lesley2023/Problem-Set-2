@@ -29,6 +29,7 @@ Please help me write a Python script to estimate the coefficient of relative ris
    where L is the number of autocorrelation lags. Select L using the data-driven method recommended by Newey and West (1994): L=\mathrm{const}\cdot T^{1/3}, where T is the number of monthly observations and the optimal constant is estimated using Equation (2.2) of Newey and West (1994).
    Use denominator T-\ell when calculating sample autocovariances, and apply ceiling rounding to the pilot truncation and final bandwidth to obtain the integer lag length L.
    Since there are two moment conditions, use a common lag L for the covariance matrix and clearly explain how it is selected from the two moment series.
+   Use the sum of the two centered moment series, with equal weights (1, 1), as the scalar series for the Newey-West (1994) common-lag selection. This rule was selected in the user's clarification for this interaction.
    Do not assume a fixed lag length in advance. Report the selected L and the estimated \hat S.
 
 7. Calculate the GMM standard error of \hat\gamma using the identity-weighting GMM sandwich variance formula:

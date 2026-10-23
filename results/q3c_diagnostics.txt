@@ -1,0 +1,21 @@
+Full EQ sample: 1927-12-01 to 2021-12-01; T_full = 1129
+Estimation sample: 1940-12-01 to 2021-12-01; T = 973
+Full-sample gross-equity variance (ddof=0) = 0.0422688945770635
+First predictor date: 1939-12-01
+First growth training sample: 1928-12-01 to 1939-12-01; n = 133
+Forecast target dates are aligned once; no additional forecast shift.
+gamma_hat = 2.98508150904051
+SE = 0.715868155538309
+G = [-0.03224686 -0.04511278]
+Sample moments = [-0.00311766  0.00222852]
+G prime mean(g) = 5.165640362832756e-12
+Objective = 1.46860838873522e-05
+Pilot m = 7
+Common-lag weights = (1, 1); C = 2.3661271849915; unrounded = 23.4463745638626; L = 24
+S_hat =
+[[0.52288478 0.71121873]
+ [0.71121873 1.03280311]]
+Pricing-error covariance =
+[[ 1.52279734e-05 -1.08850385e-05]
+ [-1.08850385e-05  7.78068487e-06]]
+Wald chi-square(1) = 0.638285105436838; p-value = 0.424332468345621
