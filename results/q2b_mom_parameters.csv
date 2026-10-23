@@ -1,0 +1,12 @@
+Parameter,Portfolio,Estimate
+a,Intercept,1.0666
+b_1,Lo PRIOR,-4.0194
+b_2,PRIOR 2,1.1429
+b_3,PRIOR 3,0.1024
+b_4,PRIOR 4,1.4897
+b_5,PRIOR 5,2.5317
+b_6,PRIOR 6,-0.8195
+b_7,PRIOR 7,0.2777
+b_8,PRIOR 8,0.9818
+b_9,PRIOR 9,-0.9414
+b_10,Hi PRIOR,3.4370

@@ -169,6 +169,12 @@ INPUT ./figures/q2a_bm_sdf_coefficients.png
 INPUT ./figures/q2a_bm_sdf_coefficients.png
 INPUT ./figures/q2a_bm_sdf_coefficients.png
 INPUT ./figures/q2a_bm_sdf_coefficients.png
+INPUT ./results/q2b_bm_mom_correlation.tex
+INPUT ./results/q2b_bm_mom_correlation.tex
+INPUT results/q2b_bm_mom_correlation.tex
+INPUT ./results/q2b_mom_parameters.tex
+INPUT ./results/q2b_mom_parameters.tex
+INPUT results/q2b_mom_parameters.tex
 INPUT ./figures/q2b_mom_sdf_coefficients.png
 INPUT ./figures/q2b_mom_sdf_coefficients.png
 INPUT ./figures/q2b_mom_sdf_coefficients.png
@@ -188,3 +194,4 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
