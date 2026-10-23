@@ -269,6 +269,56 @@ where both the expectation and covariance are estimated using only the out-of-sa
 
 \clearpage
 \section*{Question 3}
+\subsection*{(a)}
+
+% Transcribed from Q3a_Handwritten.pdf; intermediate expressions are preserved.
+The investor solves
+\[
+\max_{\varpi_t} E_t[U(W_{t+1})]
+\quad \text{s.t.}\quad
+W_{t+1}=W_t\bigl(R_{f,t+1}+\varpi_t'xR_{t+1}\bigr).
+\]
+Assume that $W_t>0$, $W_{t+1}>0$ almost surely, and that the optimal
+portfolio choice is interior. Under the usual regularity conditions, we
+can derive the first-order condition by differentiating expected utility
+w.r.t.\ $\varpi_t$.
+
+This problem can be written as
+\[
+\max_{\varpi_t}
+E_t\!\left[U\!\left(W_t\bigl(R_{f,t+1}+\varpi_t'xR_{t+1}\bigr)\right)\right].
+\]
+\[
+\frac{\partial E_t\!\left[U\!\left(W_t\bigl(R_{f,t+1}+\varpi_t'xR_{t+1}\bigr)\right)\right]}
+     {\partial\varpi_t}
+=U'(W_{t+1})\cdot W_t\cdot xR_{t+1}.
+\]
+\[
+U(w)=\frac{w^{1-\gamma}}{1-\gamma},
+\qquad U'(w)=w^{-\gamma}.
+\]
+Thus, $U'(W_{t+1})=W_{t+1}^{-\gamma}$.
+\begin{align*}
+\frac{\partial E_t\!\left[U\!\left(W_t\bigl(R_{f,t+1}+\varpi_t'xR_{t+1}\bigr)\right)\right]}
+     {\partial\varpi_t}
+&=E_t\!\left[U'(W_{t+1})\cdot W_t\right] \\
+&=E_t\!\left[W_{t+1}^{-\gamma}\cdot W_t\cdot xR_{t+1}\right]=0.
+\end{align*}
+\[
+E_t\!\left[\frac{W_t}{W_{t+1}^{\gamma}}xR_{t+1}\right]
+=W_t E_t\!\left[\frac{1}{W_{t+1}^{\gamma}}xR_{t+1}\right]=0.
+\]
+Since $W_{t+1}^{\gamma}=(W_t\cdot R_{w,t+1})^{\gamma}$,
+\[
+E_t\!\left[\frac{1}{(W_t\cdot R_{w,t+1})^{\gamma}}xR_{t+1}\right]
+=W_t^{-\gamma}E_t\!\left[R_{w,t+1}^{-\gamma}xR_{t+1}\right]=0.
+\]
+Since $W_t>0$, we have
+\[
+E_t\!\left[R_{w,t+1}^{-\gamma}xR_{t+1}\right]=0.
+\]
+
+\clearpage
 \subsection*{(b)}
 
 \input{results/q3b_gmm_summary.tex}

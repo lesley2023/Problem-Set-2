@@ -2,7 +2,7 @@ PWD /Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/
 INPUT /usr/local/texlive/2026basic/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex
+INPUT solution.tex
 OUTPUT solution.log
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls
@@ -221,6 +221,7 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
