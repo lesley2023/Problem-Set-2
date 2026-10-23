@@ -1,7 +1,6 @@
-Sample: 1926-07 to 2026-08 (T = 1202)
-Sample rule: all overlapping months, per Prompts/Q2a_prompt.txt.
-Note: Problem Set 2.pdf specifies July 1927 as the dataset start.
+Sample: 1927-07 to 2026-08 (T = 1190)
+Sample rule: July 1927 onward, keeping overlapping months, per Prompts/Q2a_prompt.txt.
 Returns in estimation: decimals; covariance divisor: T (ddof=0).
-a_hat = 1.036584598732
+a_hat = 1.036833823988
 Mean(M_star) = 1.000000000000
-Max absolute mean(M_star * xR_j) = 5.283e-17
+Max absolute mean(M_star * xR_j) = 8.733e-17

@@ -1,0 +1,12 @@
+Parameter,Portfolio,Estimate
+a,Intercept,1.0368
+b_1,Lo 10,-1.5850
+b_2,2-Dec,3.5503
+b_3,3-Dec,0.7104
+b_4,4-Dec,-3.1122
+b_5,5-Dec,1.1837
+b_6,6-Dec,2.9972
+b_7,7-Dec,-5.2931
+b_8,8-Dec,2.4722
+b_9,9-Dec,2.8775
+b_10,Hi 10,-1.1771

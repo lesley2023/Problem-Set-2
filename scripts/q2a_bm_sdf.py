@@ -42,7 +42,7 @@ def read_monthly_block(path, header_marker):
 def main():
     # This header occurs first in the value-weighted monthly BM section.
     bm = read_monthly_block(ROOT / "datasets/BM_Dataset.csv", ",<= 0,Lo 30")
-    bm = bm[BM_COLUMNS]
+    bm = bm.loc[pd.Period("1927-07", freq="M"):, BM_COLUMNS]
     rf = read_monthly_block(ROOT / "datasets/Fama_French_3_Factors.csv", ",Mkt-RF,SMB,HML,RF")[["RF"]]
     data = bm.join(rf, how="inner", validate="one_to_one")
     if data.empty:
@@ -53,8 +53,7 @@ def main():
     if not np.isfinite(data.to_numpy()).all():
         raise ValueError("Nonfinite returns found in the overlapping sample.")
 
-    # Both supplied datasets report returns in percent. Use all overlapping
-    # months as requested; no July 1927 cutoff is imposed by the prompt.
+    # Both files report percentages. Keep overlapping months from July 1927.
     data = data / 100.0
     excess = data[BM_COLUMNS].sub(data["RF"], axis=0)
     x = excess.to_numpy()
@@ -83,6 +82,36 @@ def main():
     summary.to_csv(result_dir / "q2a_bm_summary.csv", index=False)
     pd.DataFrame({"M_star": sdf}, index=excess.index).to_csv(result_dir / "q2a_bm_sdf.csv")
 
+    # Round only the displayed/exported parameter table, not the SDF estimates.
+    parameters = pd.DataFrame({
+        "Parameter": ["a"] + [f"b_{j}" for j in range(1, 11)],
+        "Portfolio": ["Intercept"] + BM_COLUMNS,
+        "Estimate": np.r_[a, b],
+    })
+    parameters.to_csv(result_dir / "q2a_bm_parameters.csv", index=False, float_format="%.4f")
+    headers = [r"$\hat a$"] + [rf"$\hat b_{{{j}}}$" for j in range(1, 11)]
+    estimates = [f"{value:.4f}" for value in parameters["Estimate"]]
+    table_tex = "\n".join([
+        r"\begin{table}[htbp]",
+        r"  \centering",
+        r"  \caption{Estimated BM SDF intercept and coefficients, rounded to four",
+        r"  decimal places. Each $\hat b_j$ corresponds to BM decile $j$;",
+        r"  estimation uses decimal monthly excess returns.}",
+        r"  \label{tab:q2a-bm-sdf-parameters}",
+        r"  \small",
+        r"  \setlength{\tabcolsep}{3pt}",
+        r"  \begin{tabular}{*{11}{r}}",
+        r"    \toprule",
+        "    " + " & ".join(headers) + r" \\",
+        r"    \midrule",
+        "    " + " & ".join(estimates) + r" \\",
+        r"    \bottomrule",
+        r"  \end{tabular}",
+        r"\end{table}",
+        "",
+    ])
+    (result_dir / "q2a_bm_parameters.tex").write_text(table_tex)
+
     fig, ax = plt.subplots(figsize=(8, 4.6), layout="constrained")
     ax.scatter(np.arange(1, 11), b, s=65, color="#245b85", zorder=3)
     ax.axhline(0, color="0.45", linewidth=0.9, zorder=2)
@@ -98,8 +127,7 @@ def main():
 
     diagnostics = (
         f"Sample: {excess.index[0]} to {excess.index[-1]} (T = {len(excess)})\n"
-        "Sample rule: all overlapping months, per Prompts/Q2a_prompt.txt.\n"
-        "Note: Problem Set 2.pdf specifies July 1927 as the dataset start.\n"
+        "Sample rule: July 1927 onward, keeping overlapping months, per Prompts/Q2a_prompt.txt.\n"
         "Returns in estimation: decimals; covariance divisor: T (ddof=0).\n"
         f"a_hat = {a:.12f}\n"
         f"Mean(M_star) = {sdf.mean():.12f}\n"
@@ -107,7 +135,7 @@ def main():
     )
     (result_dir / "q2a_bm_diagnostics.txt").write_text(diagnostics)
     print(diagnostics)
-    print(summary.to_string(index=False, float_format=lambda value: f"{value:.6f}"))
+    print(parameters.to_string(index=False, float_format=lambda value: f"{value:.4f}"))
 
 
 if __name__ == "__main__":
