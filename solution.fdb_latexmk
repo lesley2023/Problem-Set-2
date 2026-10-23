@@ -1,6 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792715531.11098 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792715531.42827 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792715531.01959 5488 199fce33576afcb25479c58951a8607a ""
+["pdflatex"] 1792715784.55215 "solution.tex" "solution.pdf" "solution" 1792715784.9984 0
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -85,9 +84,10 @@
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1772405612 2966183 588a2f29d0aaf280e3a142a37c2dd621 ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
   "figures/q2a_bm_sdf_coefficients.png" 1792714737.00965 93498 7dfdfddfa25c8ed1ac3a74486c5db319 ""
-  "solution.aux" 1792715531.39846 1108 d1abd40a25e097d99c9de704fff39650 "pdflatex"
-  "solution.out" 1792715531.26362 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792715531.01959 5488 199fce33576afcb25479c58951a8607a ""
+  "figures/q2b_mom_sdf_coefficients.png" 1792715758.90306 96505 e5b10a27b6430f07616c6004323870d4 ""
+  "solution.aux" 1792715784.96187 2157 5a343f7e3d5c836d84065b6373d25c08 "pdflatex"
+  "solution.out" 1792715784.70807 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792715768.45879 6122 5333051b5a17d6830f5035ba8494ca80 ""
   (generated)
   "solution.aux"
   "solution.log"
