@@ -3,17 +3,18 @@ Invalid re/rf pairs removed: 0
 Logs used as supplied; annual return observations sampled monthly, per assignment.
 Optimizer: scipy.optimize.minimize_scalar, unconstrained Brent; weighting scalar 1.
 gamma_hat = 1.90609106786677
-SE = 0.592980326651424
+SE = 0.602613303396794
 Sample moment = 9.194731385093998e-14
 Jacobian G_hat = -4.798094364825571e-02
 First-order condition G_hat * mean_g = -4.411718884490433e-15
 Objective = 8.454308524403259e-27
-Pilot m = 6
-s0 = 0.793099917920704
-s1 = 2.21368391205354
-NW94 constant C = 2.26925596350375
-Unrounded lag = 23.6291518219174
-Selected L = 23
-S_hat = 0.913928208313978
-HAC uses centered moments, divisor T at each lag, no prewhitening or df adjustment.
-Bandwidth reference: https://raw.githubusercontent.com/cran/sandwich/master/R/vcovHAC.R
+Pilot m = 7
+s0 = 0.867158734494114
+s1 = 2.72626221708164
+NW94 constant C = 2.45661838316879
+Unrounded lag = 25.5801062894564
+Selected L = 26
+S_hat = 0.943862956999031
+HAC uses centered moments, divisor T-lag at each lag, no prewhitening or df adjustment.
+Pilot truncation and final bandwidth use ceiling rounding.
+Plug-in constant reference: Newey--West (1994), Eq. (2.2), https://doi.org/10.2307/2297912

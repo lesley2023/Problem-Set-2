@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792787023.93562 "solution.tex" "solution.pdf" "solution" 1792787024.69473 0
+["pdflatex"] 1792788500.49598 "solution.tex" "solution.pdf" "solution" 1792788501.21545 0
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -98,7 +98,7 @@
   "figures/q2a_bm_sdf_coefficients.png" 1792716290.19629 93540 7b1b636b138146d62848a77baf9fe44e ""
   "figures/q2b_mom_sdf_coefficients.png" 1792716678.91545 96744 c9b19189e8c9d062c44189bdaed4fd41 ""
   "figures/q2c_combined_sdf_coefficients.png" 1792718117.16108 108916 75cd018fbe6558832232a6f1f7bcfade ""
-  "figures/q3b_gmm_objective.png" 1792784779.73089 138259 ee771a65679d10da66ba726b6ecafcad ""
+  "figures/q3b_gmm_objective.png" 1792788500.17792 138259 ee771a65679d10da66ba726b6ecafcad ""
   "results/q2a_bm_parameters.tex" 1792716290.06586 668 9762a1fa6c294905718226c35d088962 ""
   "results/q2b_bm_mom_correlation.tex" 1792716678.77204 226 fb432b995fcb661d0ed7ad1808b4624a ""
   "results/q2b_mom_parameters.tex" 1792716678.7646 670 e57b5daa02dd1c5683bd596007661417 ""
@@ -106,10 +106,10 @@
   "results/q2c_sharpe_ratios.tex" 1792718117.01412 435 491bac0b85e583e15a98df5afd5eb120 ""
   "results/q2d_pricing_errors.tex" 1792720682.91203 1523 3e960c8455d0e9d1d890866239bf3571 ""
   "results/q2e_os_pricing_errors.tex" 1792722592.84516 1194 6ecb036f09e41d76c37ed1eb9082195c ""
-  "results/q3b_bandwidth.tex" 1792784779.73133 942 e3f75a5ac6648d3314f2e21b322469b0 ""
-  "results/q3b_gmm_summary.tex" 1792784779.58794 624 f8c91bf7c59f586c2edc7ea831b0facc ""
-  "solution.aux" 1792787024.64547 7353 5ae5f76b4603984ed849c834c09a17d0 "pdflatex"
-  "solution.out" 1792787024.098 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "results/q3b_bandwidth.tex" 1792788500.17832 1052 7ece5bffdbb0522a8a7fafc66e606668 ""
+  "results/q3b_gmm_summary.tex" 1792788500.04502 624 d598add48507edf4f46678b723b7de76 ""
+  "solution.aux" 1792788501.16844 7353 5ae5f76b4603984ed849c834c09a17d0 "pdflatex"
+  "solution.out" 1792788500.64269 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "solution.tex" 1792787011.66646 13444 696cbd5ceb27d713251228c91d6a38e7 ""
   (generated)
   "solution.aux"

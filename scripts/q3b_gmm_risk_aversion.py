@@ -2,9 +2,9 @@
 
 Run: python3 scripts/q3b_gmm_risk_aversion.py
 
-NW94 Bartlett plug-in (centered moments, no prewhitening/df adjustment):
-https://raw.githubusercontent.com/cran/sandwich/master/R/vcovHAC.R
-See bwNeweyWest() and NeweyWest(), with prewhite=False and adjust=False.
+NW94 Eq. (2.2) Bartlett plug-in constant: https://doi.org/10.2307/2297912
+Revised prompt conventions: centered moments, divisor T-lag, ceiling rounding
+for pilot/final lags, and the existing no-prewhitening/df-adjustment setup.
 """
 
 from pathlib import Path
@@ -30,19 +30,20 @@ def newey_west_1994(moment_series):
     n = len(u)
 
     def autocovariance(lag):
-        # Divisor T at every lag, not T - lag.
-        return np.sum(u[lag:] * u[:n-lag]) / n
+        # Revised prompt: average over the T - lag available products.
+        return np.sum(u[lag:] * u[:n-lag]) / (n - lag)
 
     # NW94 Table II C pilot truncation for Bartlett without prewhitening.
-    pilot = min(int(np.floor(4 * (n / 100.0) ** (2 / 9))), n - 1)
+    pilot = min(int(np.ceil(4 * (n / 100.0) ** (2 / 9))), n - 1)
     pilot_cov = np.array([autocovariance(lag) for lag in range(pilot + 1)])
     s0 = pilot_cov[0] + 2 * np.sum(pilot_cov[1:])
     s1 = 2 * np.sum(np.arange(1, pilot + 1) * pilot_cov[1:])
     if not np.isfinite(s0) or abs(s0) < 1e-14:
         raise ValueError("NW94 plug-in bandwidth is undefined: pilot s0 is zero or nonfinite.")
+    # Bartlett plug-in constant from Newey--West (1994), Eq. (2.2).
     constant = 1.1447 * ((s1 / s0) ** 2) ** (1 / 3)
     bandwidth = constant * n ** (1 / 3)
-    lag = min(int(np.floor(bandwidth)), n - 1)
+    lag = min(int(np.ceil(bandwidth)), n - 1)
     covariance = np.array([autocovariance(j) for j in range(lag + 1)])
     weights = 1 - np.arange(1, lag + 1) / (lag + 1)
     long_run_variance = covariance[0] + 2 * np.sum(weights * covariance[1:])
@@ -159,25 +160,28 @@ def main():
 
     methodology = "\n".join([
         r"For the centered moments $u_t=g_t(\hat\gamma)-\bar g_T(\hat\gamma)$,",
-        r"define $\hat c_\ell=T^{-1}\sum_{t=\ell+1}^T u_tu_{t-\ell}$.",
-        r"The Newey--West (1994) Bartlett plug-in procedure uses",
+        r"define $\hat c_\ell=(T-\ell)^{-1}\sum_{t=\ell+1}^T u_tu_{t-\ell}$.",
+        r"Using the Bartlett plug-in constant from Equation (2.2) of",
+        r"\href{https://doi.org/10.2307/2297912}{Newey--West (1994)},",
+        r"with the autocovariance divisor and ceiling rounding specified in the prompt, we set",
         r"\[",
-        r"  m=\left\lfloor4(T/100)^{2/9}\right\rfloor,\quad",
+        r"  m=\left\lceil4(T/100)^{2/9}\right\rceil,\quad",
         r"  s_0=\hat c_0+2\sum_{\ell=1}^{m}\hat c_\ell,\quad",
         r"  s_1=2\sum_{\ell=1}^{m}\ell\hat c_\ell,",
         r"\]",
         r"\[",
         r"  C=1.1447\left[(s_1/s_0)^2\right]^{1/3},\qquad",
-        r"  L=\left\lfloor CT^{1/3}\right\rfloor.",
+        r"  L=\left\lceil CT^{1/3}\right\rceil.",
         r"\]",
         f"Here $m={bw['pilot']}$, $C={bw['constant']:.4f}$, and "
         f"$CT^{{1/3}}={bw['bandwidth']:.4f}$, giving $L={lag}$.",
         r"Thus the lag is data-dependent, with $m$ serving only as the pilot truncation.",
         r"With Bartlett weights $w_\ell=1-\ell/(L+1)$,",
         r"$\hat S=\hat c_0+2\sum_{\ell=1}^{L}w_\ell\hat c_\ell$.",
-        r"The calculation uses no prewhitening or degrees-of-freedom adjustment,",
-        r"matching the centered-moment HAC requested in the prompt. The plug-in",
-        r"implementation follows \href{https://zeileis.codeberg.page/sandwich/reference/NeweyWest.html}{the documented Newey--West procedure}.",
+        r"The pilot and final lags are rounded upward, and each autocovariance",
+        r"uses its $T-\ell$ available products. The calculation retains the",
+        r"centered-moment implementation without prewhitening or a separate",
+        r"degrees-of-freedom adjustment.",
         "",
     ])
     (result_dir / "q3b_bandwidth.tex").write_text(methodology)
@@ -192,8 +196,9 @@ def main():
         f"Pilot m = {bw['pilot']}\ns0 = {bw['s0']:.15g}\ns1 = {bw['s1']:.15g}\n"
         f"NW94 constant C = {bw['constant']:.15g}\nUnrounded lag = {bw['bandwidth']:.15g}\n"
         f"Selected L = {lag}\nS_hat = {long_run_variance:.15g}\n"
-        "HAC uses centered moments, divisor T at each lag, no prewhitening or df adjustment.\n"
-        "Bandwidth reference: https://raw.githubusercontent.com/cran/sandwich/master/R/vcovHAC.R\n"
+        "HAC uses centered moments, divisor T-lag at each lag, no prewhitening or df adjustment.\n"
+        "Pilot truncation and final bandwidth use ceiling rounding.\n"
+        "Plug-in constant reference: Newey--West (1994), Eq. (2.2), https://doi.org/10.2307/2297912\n"
     )
     (result_dir / "q3b_diagnostics.txt").write_text(diagnostics)
     print(diagnostics)

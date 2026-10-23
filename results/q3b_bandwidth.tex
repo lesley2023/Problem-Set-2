@@ -1,19 +1,22 @@
 For the centered moments $u_t=g_t(\hat\gamma)-\bar g_T(\hat\gamma)$,
-define $\hat c_\ell=T^{-1}\sum_{t=\ell+1}^T u_tu_{t-\ell}$.
-The Newey--West (1994) Bartlett plug-in procedure uses
+define $\hat c_\ell=(T-\ell)^{-1}\sum_{t=\ell+1}^T u_tu_{t-\ell}$.
+Using the Bartlett plug-in constant from Equation (2.2) of
+\href{https://doi.org/10.2307/2297912}{Newey--West (1994)},
+with the autocovariance divisor and ceiling rounding specified in the prompt, we set
 \[
-  m=\left\lfloor4(T/100)^{2/9}\right\rfloor,\quad
+  m=\left\lceil4(T/100)^{2/9}\right\rceil,\quad
   s_0=\hat c_0+2\sum_{\ell=1}^{m}\hat c_\ell,\quad
   s_1=2\sum_{\ell=1}^{m}\ell\hat c_\ell,
 \]
 \[
   C=1.1447\left[(s_1/s_0)^2\right]^{1/3},\qquad
-  L=\left\lfloor CT^{1/3}\right\rfloor.
+  L=\left\lceil CT^{1/3}\right\rceil.
 \]
-Here $m=6$, $C=2.2693$, and $CT^{1/3}=23.6292$, giving $L=23$.
+Here $m=7$, $C=2.4566$, and $CT^{1/3}=25.5801$, giving $L=26$.
 Thus the lag is data-dependent, with $m$ serving only as the pilot truncation.
 With Bartlett weights $w_\ell=1-\ell/(L+1)$,
 $\hat S=\hat c_0+2\sum_{\ell=1}^{L}w_\ell\hat c_\ell$.
-The calculation uses no prewhitening or degrees-of-freedom adjustment,
-matching the centered-moment HAC requested in the prompt. The plug-in
-implementation follows \href{https://zeileis.codeberg.page/sandwich/reference/NeweyWest.html}{the documented Newey--West procedure}.
+The pilot and final lags are rounded upward, and each autocovariance
+uses its $T-\ell$ available products. The calculation retains the
+centered-moment implementation without prewhitening or a separate
+degrees-of-freedom adjustment.
