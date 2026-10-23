@@ -19,7 +19,10 @@ Please help me write a Python script to construct an unconditional linear stocha
 
 7. Produce a scatterplot with MOM deciles 1–10 on the x-axis and their respective estimated b_j coefficients on the y-axis. Label the axes clearly and save the figure as a PNG.
 
-8. Generate a table reporting the estimated SDF intercept \hat a and the coefficients \hat b_j for each of the 10 BM portfolios, rounded to four decimal places.
+8. Generate a table reporting the estimated SDF intercept \hat a and the coefficients \hat b_j for each of the 10 MOM portfolios, rounded to four decimal places.
 
+9. Calculate the correlation between the SDF from Q2a (BM) and the SDF from Q2b (MOM):
+   \rho=\operatorname{Corr}(\hat M^{*,BM},\hat M^{*,MOM})
+   Align the two SDF series by month, keeping only overlapping observations. Report the correlation coefficient and briefly interpret its economic meaning.
 
 Please keep the code straightforward, use pandas, numpy, and matplotlib. Reuse the existing code from Q2a where possible.
