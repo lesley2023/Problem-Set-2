@@ -10,6 +10,30 @@ import numpy as np
 import pandas as pd
 
 
+def calculate_pricing_errors(excess, sdfs):
+    """Calculate mean(xR) - Cov(-M, xR), with covariance divisor T."""
+    if not excess.index.equals(sdfs.index):
+        raise ValueError("Returns and SDFs must have identical aligned monthly dates.")
+    x = excess.to_numpy()
+    negative_sdf = -sdfs.to_numpy()
+    means = x.mean(axis=0)
+    centered_x = x - means
+    centered_negative_sdf = negative_sdf - negative_sdf.mean(axis=0)
+    covariances = (
+        centered_negative_sdf[:, :, None] * centered_x[:, None, :]
+    ).mean(axis=0)
+    return pd.DataFrame(
+        (means[None, :] - covariances).T,
+        index=excess.columns, columns=sdfs.columns,
+    ).rename_axis("Portfolio")
+
+
+def format_pricing_error(value):
+    """Round for display and replace only displayed negative zero."""
+    formatted = f"{value:.6f}"
+    return "0.000000" if formatted == "-0.000000" else formatted
+
+
 def main():
     excess = load_excess_returns()
     result_dir = ROOT / "results"
@@ -40,34 +64,20 @@ def main():
     sdfs = data[list(sdf_files)]
     np.testing.assert_allclose(sdfs.mean(), 1.0, rtol=0, atol=1e-12)
 
-    x = excess.to_numpy()
-    negative_sdf = -sdfs.to_numpy()
-    means = x.mean(axis=0)
-    centered_x = x - means
-    centered_negative_sdf = negative_sdf - negative_sdf.mean(axis=0)
-    # Cov(-M, xR) = mean[(-M - mean(-M)) * (xR - mean(xR))], divisor T.
-    covariances = (
-        centered_negative_sdf[:, :, None] * centered_x[:, None, :]
-    ).mean(axis=0)
-    errors = (means[None, :] - covariances).T
+    pricing_errors = calculate_pricing_errors(excess, sdfs)
+    errors = pricing_errors.to_numpy()
 
     # Verify against the sample pricing moments, since each saved SDF has mean 1.
+    x = excess.to_numpy()
     direct_moments = (x[:, :, None] * sdfs.to_numpy()[:, None, :]).mean(axis=0)
     np.testing.assert_allclose(errors, direct_moments, rtol=0, atol=1e-12)
     np.testing.assert_allclose(errors[:10, 0], 0.0, rtol=0, atol=1e-12)
     np.testing.assert_allclose(errors[10:, 1], 0.0, rtol=0, atol=1e-12)
     np.testing.assert_allclose(errors[:, 2], 0.0, rtol=0, atol=1e-12)
 
-    pricing_errors = pd.DataFrame(errors, index=excess.columns, columns=list(sdf_files))
-    pricing_errors.index.name = "Portfolio"
     pricing_errors.to_csv(result_dir / "q2d_pricing_errors_full_precision.csv")
 
-    # Replace only displayed negative zero; preserve the unrounded calculations.
-    def display_error(value):
-        formatted = f"{value:.6f}"
-        return "0.000000" if formatted == "-0.000000" else formatted
-
-    display_table = pricing_errors.map(display_error)
+    display_table = pricing_errors.map(format_pricing_error)
     display_table.to_csv(result_dir / "q2d_pricing_errors.csv")
     table_lines = [
         r"\begin{table}[!htbp]",

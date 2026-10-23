@@ -1,0 +1,12 @@
+In-sample: 1927-07 to 1989-12 (T_IS = 750)
+Out-of-sample: 1990-01 to 2026-08 (T_OS = 440)
+Returns/errors: decimals; covariance divisor: corresponding sample size (ddof=0).
+Vector order: ten BM portfolios followed by ten MOM portfolios.
+Fixed a_IS = 1.124758667491
+Mean(M_star_IS) = 1.000000000000
+Maximum absolute in-sample pricing moment = 7.142434791755e-17
+Mean(M_star_OS) = 1.038150982682
+No out-of-sample re-estimation or renormalization.
+Pricing errors use the specified mean-minus-covariance formula.
+Maximum absolute out-of-sample pricing error = 2.705497956773e-02
+Maximum covariance-check discrepancy = 2.775557561563e-17
