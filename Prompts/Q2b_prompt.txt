@@ -1,0 +1,24 @@
+Please help me write a Python script to construct an unconditional linear stochastic discount factor (SDF) using the 10 momentum (MOM) decile portfolios, following the same approach as Q2a.
+
+1. Read the dataset 'datasets/MOM_Dataset.csv' to obtain the monthly value-weighted returns R_{j,t} for the 10 MOM portfolios (Lo PRIOR through Hi PRIOR).
+
+2. Read the dataset 'datasets/Fama_French_3_Factors.csv' to obtain the monthly risk-free return (RF). Align the two datasets by year and month, keeping only overlapping observations. Convert returns from percentages to decimals if necessary.
+
+3. Calculate the monthly excess returns for each of the 10 MOM portfolios:
+   xR_{j,t}=R_{j,t}-R_{f,t}
+
+4. Calculate the vector of sample mean excess returns \hat\mu (10 × 1) and the sample covariance matrix \hat\Sigma (10 × 10).
+
+5. Construct the SDF using:
+   M_t^*=a-b'xR_t where: \hat b=\hat\Sigma^{-1}\hat\mu
+   Under the normalization E[M^*]=1:
+   \hat a=1+\hat b'\hat\mu
+
+6. Construct the monthly SDF series:
+   \hat M_t^*=\hat a-\hat b'xR_t
+
+7. Produce a scatterplot with MOM deciles 1–10 on the x-axis and their respective estimated b_j coefficients on the y-axis. Label the axes clearly and save the figure as a PNG.
+
+8. Print a table containing each MOM portfolio's mean excess return, volatility, and estimated b_j coefficient.
+
+Please keep the code straightforward, use pandas, numpy, and matplotlib. Reuse the existing code from Q2a where possible.

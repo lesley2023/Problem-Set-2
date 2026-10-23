@@ -123,7 +123,17 @@ This is the same as in Q1(c).
 \section*{Question 2}
 
 \subsection*{(a)}
+I construct the unconditional linear SDF as
 
+\[
+\hat M_t^*=\hat a-\hat b'xR_t,
+\]
+
+where \(\hat b=\hat\Sigma^{-1}\hat\mu\) and \(\hat a=1+\hat b'\hat\mu\), imposing the normalization \(E[M^*]=1\).
+
+Figure \ref{fig:q2a-bm-sdf-coefficients} shows no clear monotonic relationship between the estimated \(b_j\) coefficients and book-to-market deciles. Instead, the coefficients fluctuate considerably across portfolios, with both positive and negative values.
+
+This pattern arises because the coefficients are determined by both the expected excess returns and the covariance structure of the portfolios, as reflected in \(\hat b=\hat\Sigma^{-1}\hat\mu\). Therefore, portfolios with higher average excess returns do not necessarily receive larger positive coefficients. 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{figures/q2a_bm_sdf_coefficients.png}
