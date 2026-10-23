@@ -1,0 +1,33 @@
+Please help me write a Python script to estimate the coefficient of relative risk aversion \gamma using GMM based on the unconditional SDF pricing condition.
+
+1. Read the dataset "datasets/EQ Dataset.csv" to obtain the monthly log equity returns (re) and log risk-free returns (rf). Use all available monthly observations, keeping only observations with valid values for both variables.
+
+2. Construct the gross returns and excess returns:
+   R_{w,t}=e^{r_{e,t}}, \quad R_{f,t}=e^{r_{f,t}}
+   xR_{w,t}=R_{w,t}-R_{f,t}
+
+3. Define the GMM moment function and its sample average:
+   g_t(\gamma)=R_{w,t}^{-\gamma}xR_{w,t}
+   \bar g_T(\gamma)=\frac{1}{T}\sum_{t=1}^T g_t(\gamma)
+
+4. Estimate \gamma by numerically minimizing the GMM objective function with weighting scalar equal to 1:
+   \hat\gamma=\arg\min_{\gamma}[\bar g_T(\gamma)]^2
+   Use scipy.optimize.minimize_scalar. Check the value of the sample moment at the estimated \hat\gamma and verify the first-order condition:
+   \hat G\bar g_T(\hat\gamma)=0
+
+
+5. Calculate the sample Jacobian evaluated at \hat\gamma:
+   \hat G=-\frac{1}{T}\sum_{t=1}^T r_{e,t}e^{-\hat\gamma r_{e,t}}(e^{r_{e,t}}-e^{r_{f,t}})
+
+6. Estimate the long-run variance \hat S of the moment series g_t(\hat\gamma) using Newey and West (1987, 1994) HAC standard errors. Center the moment series by subtracting its sample mean.
+   Use Bartlett weights:
+   w_\ell=1-\frac{\ell}{L+1}
+   where L is selected using the Newey and West (1994) data-driven automatic bandwidth procedure, with L=\text{const}\cdot T^{1/3} and the constant estimated from the data. Report the selected L and the estimated \hat S.
+
+7. Calculate the GMM standard error using:
+   SE(\hat\gamma)=\sqrt{\frac{\hat S}{T\hat G^2}}
+   Check that \hat G is nonzero before applying this formula.
+
+8. Generate a summary table reporting the estimated \hat\gamma, its standard error, \hat G, \hat S, the sample moment at \hat\gamma, and the number of observations. Round results to four decimal places.
+
+Please keep the code straightforward and use pandas, numpy, and scipy. Use sample averages for empirical expectations and clearly explain the Newey–West bandwidth selection.
