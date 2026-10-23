@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792523722.23802 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792523722.43435 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792523722.14734 4118 d12cf53416e798d6e65b809ba49bb641 ""
+["pdflatex"] 1792714756.60281 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792714756.90523 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792714736.5258 4722 59418311026ddb3cd8648682da2f5f19 ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -84,9 +84,10 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1788992438 79187 e3f5941707347d15c1721f52279213a2 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1772405612 2966183 588a2f29d0aaf280e3a142a37c2dd621 ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "solution.aux" 1792523722.4057 162 fa61bf9ecf9314f94d51aa32222a725c "pdflatex"
-  "solution.out" 1792523722.39249 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792523722.14734 4118 d12cf53416e798d6e65b809ba49bb641 ""
+  "figures/q2a_bm_sdf_coefficients.png" 1792714737.00965 93498 7dfdfddfa25c8ed1ac3a74486c5db319 ""
+  "solution.aux" 1792714756.87589 1108 d1abd40a25e097d99c9de704fff39650 "pdflatex"
+  "solution.out" 1792714756.74635 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792714736.5258 4722 59418311026ddb3cd8648682da2f5f19 ""
   (generated)
   "solution.aux"
   "solution.log"
