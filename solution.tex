@@ -205,9 +205,38 @@ the maximum attainable Sharpe ratio and the volatility of the corresponding SDF.
 
 \clearpage
 \subsection*{(d)}
+Table \ref{tab:q2d-pricing-errors} reports the pricing
+errors of the 20 BM and MOM portfolios under the three
+SDFs constructed in parts (a), (b), and (c), using
+\[
+\hat{\alpha}_p
+=\hat{E}[xR_p]
+-\widehat{\operatorname{Cov}}(-\hat M^*,xR_p).
+\]
+
+The pricing errors are essentially zero for the
+portfolios used to construct each SDF. Specifically,
+the BM SDF prices all 10 BM portfolios, the MOM SDF
+prices all 10 MOM portfolios, and the combined SDF
+prices all 20 portfolios, with errors close to
+numerical precision.
+
+However, the BM and MOM SDFs exhibit nonzero pricing
+errors when applied to portfolios outside their
+respective construction sets. The maximum absolute
+pricing error is 0.010157 for MOM portfolios under
+the BM SDF, compared with 0.003450 for BM portfolios
+under the MOM SDF.
+
+These results suggest that an SDF constructed from
+one set of portfolios does not necessarily price
+another set of portfolios accurately. The combined
+SDF eliminates the in-sample pricing errors by
+incorporating both sets of portfolios. However,
+this exact in-sample fit does not necessarily imply
+good out-of-sample pricing performance.
 
 \input{results/q2d_pricing_errors.tex}
-\input{results/q2d_verification.tex}
 \FloatBarrier
 
 \end{document}

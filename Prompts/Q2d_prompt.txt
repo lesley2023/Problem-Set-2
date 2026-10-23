@@ -15,6 +15,4 @@ Please help me write a Python script to calculate the pricing errors of the 20 b
 
 5. Verify that the pricing errors are approximately zero for the 10 BM portfolios under the BM SDF, the 10 MOM portfolios under the MOM SDF, and all 20 portfolios under the Combined SDF.
 
-6. Briefly describe and compare the pricing errors across the three SDFs. Explain what the results suggest about how well an SDF constructed using one group of portfolios can price another group, and why the Combined SDF should have approximately zero in-sample pricing errors for all 20 portfolios.
-
 Please keep the code straightforward, use pandas and numpy, and reuse the existing code and results from Q2a, Q2b, and Q2c where possible. 

@@ -1,0 +1,27 @@
+Please help me write a Python script to construct an out-of-sample unconditional linear stochastic discount factor (SDF) using the combined 20 book-to-market (BM) and momentum (MOM) portfolios, following the approach in Q2c.
+
+1. Use the monthly excess returns of the 10 BM portfolios and 10 MOM portfolios from Q2c. Use monthly observations from July 1927 through the latest available month, keeping only overlapping observations.
+
+2. Split the combined dataset into two periods:
+   - In-sample period: July 1927 to December 1989.
+   - Out-of-sample period: January 1990 to the latest available month.
+
+3. Using only the in-sample data, calculate the vector of sample mean excess returns \hat\mu_{IS} (20 × 1) and the covariance matrix \hat\Sigma_{IS} (20 × 20).
+
+4. Construct the in-sample SDF using:
+   M_t^{*,IS}=a_{IS}-b_{IS}'xR_t
+   where: \hat b_{IS}=\hat\Sigma_{IS}^{-1}\hat\mu_{IS}
+   Under the normalization E[M^{*,IS}]=1:
+   \hat a_{IS}=1+\hat b_{IS}'\hat\mu_{IS}
+
+
+5. Apply the estimated \hat a_{IS} and \hat b_{IS} to the out-of-sample excess returns from January 1990 onward to construct:
+   \hat M_{OS,t}^*=\hat a_{IS}-\hat b_{IS}'xR_t
+   Keep the estimated coefficients fixed throughout the out-of-sample period without re-estimating them.
+
+6. For each of the 20 portfolios, calculate the out-of-sample pricing error using:
+   \hat\alpha_{OS,p}=\hat E_{OS}[xR_p] - \widehat{\operatorname{Cov}}_{OS}(-\hat M_{OS}^*,xR_p)
+
+7. Generate a table reporting the out-of-sample pricing errors for all 20 portfolios. Include two columns: portfolio name and out-of-sample pricing error. Clearly distinguish between BM and MOM portfolios and round the results to six decimal places.
+
+Please keep the code straightforward, use pandas and numpy, and reuse the existing code and results from Q2c and Q2d where possible. 
