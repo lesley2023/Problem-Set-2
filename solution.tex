@@ -241,7 +241,29 @@ good out-of-sample pricing performance.
 
 \clearpage
 \subsection*{(e)}
+Following Question 2(c), I re-estimate the SDF using monthly excess returns of the 20 BM and MOM decile portfolios from July 1927 through December 1989:
 
+\[
+\hat M_t^*=\hat a-\hat{\mathbf b}'\mathbf{xR}_t.
+\]
+
+This gives the estimated intercept \(\hat a\) and coefficient vector \(\hat{\mathbf b}\).
+
+I then hold the estimated coefficients fixed and construct the out-of-sample SDF using monthly excess returns from January 1990 through August 2026:
+
+\[
+\hat M_{OS,t}^*=\hat a-\hat{\mathbf b}'\mathbf{xR}_t.
+\]
+
+For each of the 20 portfolios, I calculate the out-of-sample pricing error as
+
+\[
+\hat\alpha_{OS,p}
+=\widehat E[xR_p]
+-\widehat{\operatorname{Cov}}(-\hat M_{OS}^*,xR_p),
+\]
+
+where both the expectation and covariance are estimated using only the out-of-sample observations. The resulting pricing errors are reported in Table \ref{tab:q2e-out-of-sample-pricing-errors}. All 20 portfolios exhibit positive out-of-sample pricing errors, suggesting that the estimated SDF does not fully capture their average excess returns.
 \input{results/q2e_os_pricing_errors.tex}
 \FloatBarrier
 
