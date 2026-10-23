@@ -1,0 +1,29 @@
+Please help me write a Python script to construct an unconditional linear stochastic discount factor (SDF) using the combined 20 book-to-market (BM) and momentum (MOM) decile portfolios, following the same approach as Q2a and Q2b.
+
+1. Read the datasets 'datasets/BM_Dataset.csv' and 'datasets/MOM_Dataset.csv' to obtain the monthly value-weighted returns for the 10 BM and 10 MOM portfolios. Use monthly observations from July 1927 through the latest available month. Align the two datasets and the risk-free returns from 'datasets/Fama_French_3_Factors.csv' by year and month, keeping only overlapping observations.
+
+2. Calculate the monthly excess returns for all 20 portfolios:
+   xR_{j,t}=R_{j,t}-R_{f,t}
+   Combine the excess returns into a 20 × 1 vector xR_t, containing the 10 BM portfolios followed by the 10 MOM portfolios.
+
+3. Calculate the vector of sample mean excess returns \hat\mu (20 × 1) and the sample covariance matrix \hat\Sigma (20 × 20).
+
+4. Construct the SDF using:
+   M_t^*=a-b'xR_t, where \hat b=\hat\Sigma^{-1}\hat\mu.
+   Under the normalization E[M^*]=1:
+   \hat a=1+\hat b'\hat\mu
+
+5. Construct the monthly SDF series:
+   \hat M_t^*=\hat a-\hat b'xR_t
+
+6. Produce a scatterplot with portfolio deciles 1–10 on the x-axis and their respective estimated b_j coefficients on the y-axis. Use blue dots for BM portfolios and red dots for MOM portfolios. Include a legend, label the axes clearly, and save the figure as a PNG.
+
+7. Generate a table reporting the estimated SDF intercept \hat a and the coefficients \hat b_j for each of the 20 portfolios, rounded to four decimal places. Clearly distinguish between BM and MOM portfolios.
+
+8. Construct the maximum Sharpe ratio portfolio for each case (BM, MOM, and Combined) using the corresponding estimated b coefficients: xR_t^*=\hat b'xR_t
+
+9. Calculate and report the monthly Sharpe ratios of the three maximum Sharpe ratio portfolios:
+   SR=\frac{\hat E[xR^*]}{\sqrt{\widehat{\operatorname{Var}}(xR^*)}}
+   Use the same overlapping sample period for all three portfolios.
+
+Please keep the code straightforward, use pandas, numpy, and matplotlib. Reuse the existing code from Q2a and Q2b where possible.
