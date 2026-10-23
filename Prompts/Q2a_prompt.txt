@@ -1,0 +1,25 @@
+Please help me write a Python script to construct an unconditional linear stochastic discount factor (SDF) using the 10 book-to-market (BM) decile portfolios.
+
+1. Read the dataset 'datasets/BM_Dataset.csv' to obtain the monthly value-weighted returns R_{j,t} for the 10 BM portfolios (Lo 10 through Hi 10). 
+
+2. Read the dataset 'datasets/Fama_French_3_Factors.csv' to obtain the monthly risk-free return (RF). Align the two datasets by year and month, keeping only overlapping observations. Convert returns from percentages to decimals if necessary.
+
+3. Calculate the monthly excess returns for each of the 10 BM portfolios:
+   xR_{j,t}=R_{j,t}-R_{f,t}
+   
+
+4. Calculate the vector of sample mean excess returns \hat\mu (10 × 1) and the sample covariance matrix \hat\Sigma (10 × 10).
+
+5. Construct the SDF using:
+   M_t^*=a-b'xR_t where: \hat b=\hat\Sigma^{-1}\hat\mu
+   Under the normalization E[M^*]=1:
+   \hat a=1+\hat b'\hat\mu
+   
+   Use sample averages for all empirical expectations and calculate the covariance matrix with divisor T (`ddof=0`) to ensure consistency with the SDF pricing conditions.
+6. Construct the monthly SDF series:
+   \hat M_t^*=\hat a-\hat b'xR_t
+   
+7. Produce a scatterplot with BM deciles 1–10 on the x-axis and their respective estimated b_j coefficients on the y-axis. Label the axes clearly and save the figure as a PNG.
+
+8. Print a table containing each BM portfolio's mean excess return, volatility, and estimated b_j coefficient.
+Please keep the code straightforward, use pandas, numpy, and matplotlib. 
