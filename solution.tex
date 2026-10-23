@@ -131,10 +131,13 @@ I construct the unconditional linear SDF as
 
 where \(\hat b=\hat\Sigma^{-1}\hat\mu\) and \(\hat a=1+\hat b'\hat\mu\), imposing the normalization \(E[M^*]=1\).
 
+Table \ref{tab:q2a-bm-sdf-parameters} reports the estimated SDF coefficients. The estimated SDF satisfies the unconditional pricing conditions, with $\widehat E[\hat M^*]=1$ and $\widehat E[\hat M^*xR_j]\approx 0$ for all 10 portfolios.
+
 Figure \ref{fig:q2a-bm-sdf-coefficients} shows no clear monotonic relationship between the estimated \(b_j\) coefficients and book-to-market deciles. Instead, the coefficients fluctuate considerably across portfolios, with both positive and negative values.
 
 This pattern arises because the coefficients are determined by both the expected excess returns and the covariance structure of the portfolios, as reflected in \(\hat b=\hat\Sigma^{-1}\hat\mu\). Therefore, portfolios with higher average excess returns do not necessarily receive larger positive coefficients. 
 \input{results/q2a_bm_parameters.tex}
+
 
 \begin{figure}[htbp]
   \centering
@@ -151,7 +154,12 @@ This pattern arises because the coefficients are determined by both the expected
 
 \clearpage
 \subsection*{(b)}
+Following the same approach as in part (a), I construct the unconditional linear SDF using the 10 momentum portfolios. Table \ref{tab:q2b-mom-sdf-parameters} reports the estimated SDF coefficients.
 
+Figure \ref{fig:q2b-mom-sdf-coefficients} shows that the estimated coefficients vary considerably across momentum deciles, with both positive and negative values. There is no clear monotonic pattern. As in part (a), this pattern reflects both the expected excess returns and the covariance structure of the
+portfolios.
+
+The sample correlation between the BM and MOM SDFs is 0.3555, indicating a moderate positive relationship. This suggests that the two SDFs capture some common variation, but also reflect different components of asset returns. 
 \input{results/q2b_bm_mom_correlation.tex}
 \input{results/q2b_mom_parameters.tex}
 
