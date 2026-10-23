@@ -180,6 +180,17 @@ INPUT ./figures/q2b_mom_sdf_coefficients.png
 INPUT ./figures/q2b_mom_sdf_coefficients.png
 INPUT ./figures/q2b_mom_sdf_coefficients.png
 INPUT ./figures/q2b_mom_sdf_coefficients.png
+INPUT ./results/q2c_combined_parameters.tex
+INPUT ./results/q2c_combined_parameters.tex
+INPUT results/q2c_combined_parameters.tex
+INPUT ./results/q2c_sharpe_ratios.tex
+INPUT ./results/q2c_sharpe_ratios.tex
+INPUT results/q2c_sharpe_ratios.tex
+INPUT ./figures/q2c_combined_sdf_coefficients.png
+INPUT ./figures/q2c_combined_sdf_coefficients.png
+INPUT ./figures/q2c_combined_sdf_coefficients.png
+INPUT ./figures/q2c_combined_sdf_coefficients.png
+INPUT ./figures/q2c_combined_sdf_coefficients.png
 INPUT solution.aux
 INPUT ./solution.out
 INPUT ./solution.out

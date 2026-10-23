@@ -1,0 +1,7 @@
+Common sample: 1927-07 to 2026-08 (T = 1190)
+Returns: decimals; sample covariance and variance divisor: T (ddof=0).
+Vector order: ten BM deciles followed by ten MOM deciles.
+Combined a_hat = 1.092735819888
+BM: mean(M_star) = 1.000000000000; max absolute pricing moment = 8.733e-17; monthly SR = 0.191921400548
+MOM: mean(M_star) = 1.000000000000; max absolute pricing moment = 3.769e-17; monthly SR = 0.258098585574
+Combined: mean(M_star) = 1.000000000000; max absolute pricing moment = 9.777e-17; monthly SR = 0.304525565245

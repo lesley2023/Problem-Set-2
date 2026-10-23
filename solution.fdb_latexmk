@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792717324.64261 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792717325.12358 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792717324.4864 7223 b65e406632589f3bd22c941418dc7092 ""
+["pdflatex"] 1792718148.28634 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792718148.89537 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792718116.63067 7764 c39ad14dbf2cd02a55d84f3464245183 ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -90,12 +90,15 @@
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
   "figures/q2a_bm_sdf_coefficients.png" 1792716290.19629 93540 7b1b636b138146d62848a77baf9fe44e ""
   "figures/q2b_mom_sdf_coefficients.png" 1792716678.91545 96744 c9b19189e8c9d062c44189bdaed4fd41 ""
+  "figures/q2c_combined_sdf_coefficients.png" 1792718117.16108 108916 75cd018fbe6558832232a6f1f7bcfade ""
   "results/q2a_bm_parameters.tex" 1792716290.06586 668 9762a1fa6c294905718226c35d088962 ""
   "results/q2b_bm_mom_correlation.tex" 1792716678.77204 226 fb432b995fcb661d0ed7ad1808b4624a ""
   "results/q2b_mom_parameters.tex" 1792716678.7646 670 e57b5daa02dd1c5683bd596007661417 ""
-  "solution.aux" 1792717325.08861 3154 06da13e16e32a0bbc60ecbc4cc5cd16d "pdflatex"
-  "solution.out" 1792717324.8138 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792717324.4864 7223 b65e406632589f3bd22c941418dc7092 ""
+  "results/q2c_combined_parameters.tex" 1792718117.01387 776 0a0f08f52dd45f72ab8cf30e2a9b2d67 ""
+  "results/q2c_sharpe_ratios.tex" 1792718117.01412 435 491bac0b85e583e15a98df5afd5eb120 ""
+  "solution.aux" 1792718148.86026 4853 9d80513ec37242fb9bfb8a0da858df01 "pdflatex"
+  "solution.out" 1792718148.45361 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792718116.63067 7764 c39ad14dbf2cd02a55d84f3464245183 ""
   (generated)
   "solution.aux"
   "solution.log"
