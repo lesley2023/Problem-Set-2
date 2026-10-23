@@ -23,7 +23,8 @@ def estimate_sdf(excess):
     return a, b, sdf, x_star, np.abs(pricing_moments).max()
 
 
-def main():
+def load_excess_returns():
+    """Return Q2(c)'s aligned decimal excess returns, ordered BM then MOM."""
     # Reuse the existing reader, selecting only monthly value-weighted deciles.
     bm = read_monthly_block(ROOT / "datasets/BM_Dataset.csv", ",<= 0,Lo 30")[BM_COLUMNS]
     mom = read_monthly_block(ROOT / "datasets/MOM_Dataset.csv", ",Lo PRIOR,PRIOR 2")[MOM_COLUMNS]
@@ -41,7 +42,11 @@ def main():
         raise ValueError("Nonfinite returns found in the overlapping sample.")
 
     data = data / 100.0  # All three supplied files report percentages.
-    excess = data.drop(columns="RF").sub(data["RF"], axis=0)
+    return data.drop(columns="RF").sub(data["RF"], axis=0)
+
+
+def main():
+    excess = load_excess_returns()
     # Re-estimate all cases on this common sample, avoiding rounded weights.
     fits = {
         "BM": estimate_sdf(excess.iloc[:, :10]),

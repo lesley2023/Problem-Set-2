@@ -1,0 +1,9 @@
+Common sample: 1927-07 to 2026-08 (T = 1190)
+Returns and pricing errors: decimals; covariance divisor: T (ddof=0).
+Reused saved Q2(a), Q2(b), and Q2(c) SDFs; no re-estimation.
+Max |alpha|, BM portfolios / BM SDF: 8.673617379884e-17
+Max |alpha|, MOM portfolios / MOM SDF: 3.642919299551e-17
+Max |alpha|, all portfolios / Combined SDF: 9.540979117872e-17
+Max |alpha|, MOM portfolios / BM SDF: 1.015679374179e-02
+Max |alpha|, BM portfolios / MOM SDF: 3.449882470063e-03
+Max discrepancy from direct pricing moments: 2.416950859806e-18
