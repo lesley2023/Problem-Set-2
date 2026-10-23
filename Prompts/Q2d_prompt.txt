@@ -1,0 +1,20 @@
+Please help me write a Python script to calculate the pricing errors of the 20 book-to-market (BM) and momentum (MOM) decile portfolios under the three unconditional linear SDFs constructed in Q2a, Q2b, and Q2c.
+
+1. Use the monthly excess returns of the 10 BM portfolios and 10 MOM portfolios from Q2c. Use monthly observations from July 1927 through the latest available month, keeping only overlapping observations.
+
+2. Use the three estimated SDFs from Q2a, Q2b, and Q2c:
+   \hat M_t^{*,BM}=\hat a_{BM}-\hat b_{BM}'xR_t^{BM}
+   \hat M_t^{*,MOM}=\hat a_{MOM}-\hat b_{MOM}'xR_t^{MOM}
+   \hat M_t^{*,Combined}=\hat a_{Combined}-\hat b_{Combined}'xR_t^{Combined}
+   Reuse the existing coefficients and monthly SDF series from the previous questions.
+
+3. For each of the 20 portfolios, calculate the pricing errors under each of the three SDFs using:
+   \hat\alpha_p=\hat E[xR_p]-\widehat{\operatorname{Cov}}(-\hat M^*,xR_p)
+
+4. Generate a table reporting the pricing errors for all 20 portfolios under the three SDFs. Include four columns: portfolio name, pricing error under the BM SDF, pricing error under the MOM SDF, and pricing error under the Combined SDF. Clearly distinguish between BM and MOM portfolios and round the results to six decimal places.
+
+5. Verify that the pricing errors are approximately zero for the 10 BM portfolios under the BM SDF, the 10 MOM portfolios under the MOM SDF, and all 20 portfolios under the Combined SDF.
+
+6. Briefly describe and compare the pricing errors across the three SDFs. Explain what the results suggest about how well an SDF constructed using one group of portfolios can price another group, and why the Combined SDF should have approximately zero in-sample pricing errors for all 20 portfolios.
+
+Please keep the code straightforward, use pandas and numpy, and reuse the existing code and results from Q2a, Q2b, and Q2c where possible. 

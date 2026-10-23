@@ -178,6 +178,16 @@ The sample correlation between the BM and MOM SDFs is 0.3555, indicating a moder
 
 \clearpage
 \subsection*{(c)}
+Following the same approach as in parts (a) and (b), I construct the unconditional linear SDF using the combined 20 BM and MOM portfolios. Table \ref{tab:q2c-combined-sdf-parameters} reports the estimated SDF coefficients.
+
+Figure \ref{fig:q2c-combined-sdf-coefficients} shows that the estimated coefficients vary considerably across both BM and MOM deciles, with positive and negative values and no clear monotonic pattern.
+Compared with parts (a) and (b), the coefficients  change when the two sets of portfolios are combined, reflecting the additional covariance relationships and diversification opportunities.
+
+Table \ref{tab:q2c-monthly-sharpe-ratios} reports monthly Sharpe ratios of 0.1919, 0.2581, and 0.3045 for the BM, MOM, and combined maximum Sharpe ratio portfolios, respectively. The combined portfolio achieves the highest Sharpe ratio, consistent with 
+the theoretical prediction that expanding the investment opportunity set cannot reduce the maximum attainable Sharpe ratio.
+
+This result is also consistent with the SDF volatility bound discussed in class. Under the normalization $E[M^*]=1$, the volatility of the constructed SDF equals the maximum Sharpe ratio. Thus, including both BM and MOM portfolios increases
+the maximum attainable Sharpe ratio and the volatility of the corresponding SDF.
 
 \input{results/q2c_combined_parameters.tex}
 \input{results/q2c_sharpe_ratios.tex}
