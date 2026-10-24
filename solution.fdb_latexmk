@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792790573.2558 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792790573.94238 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792790519.20958 13552 a3db0ef253dbebc9f8614b92b4f55d74 ""
+["pdflatex"] 1792853958.4132 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792853958.99227 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792853958.26191 13803 f5e6191d158c389cfe3be15784e7e780 ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -99,7 +99,6 @@
   "figures/q2a_bm_sdf_coefficients.png" 1792716290.19629 93540 7b1b636b138146d62848a77baf9fe44e ""
   "figures/q2b_mom_sdf_coefficients.png" 1792716678.91545 96744 c9b19189e8c9d062c44189bdaed4fd41 ""
   "figures/q2c_combined_sdf_coefficients.png" 1792718117.16108 108916 75cd018fbe6558832232a6f1f7bcfade ""
-  "figures/q3c_gmm_objective.png" 1792790520.39478 154074 864ac5b98745b5d7579d19502dd3ef88 ""
   "results/q2a_bm_parameters.tex" 1792716290.06586 668 9762a1fa6c294905718226c35d088962 ""
   "results/q2b_bm_mom_correlation.tex" 1792716678.77204 226 fb432b995fcb661d0ed7ad1808b4624a ""
   "results/q2b_mom_parameters.tex" 1792716678.7646 670 e57b5daa02dd1c5683bd596007661417 ""
@@ -108,11 +107,10 @@
   "results/q2d_pricing_errors.tex" 1792720682.91203 1523 3e960c8455d0e9d1d890866239bf3571 ""
   "results/q2e_os_pricing_errors.tex" 1792722592.84516 1194 6ecb036f09e41d76c37ed1eb9082195c ""
   "results/q3b_gmm_summary.tex" 1792788500.04502 624 d598add48507edf4f46678b723b7de76 ""
-  "results/q3c_details.tex" 1792790520.23859 1041 f744be81a584ee6a91213200d58913f7 ""
   "results/q3c_gmm_summary.tex" 1792790520.2385 748 455e9fac12a6abd5498553f7dbe142ed ""
-  "solution.aux" 1792790573.9066 7821 8582a3c59dbfd27319270af955327b73 "pdflatex"
-  "solution.out" 1792790573.39435 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792790519.20958 13552 a3db0ef253dbebc9f8614b92b4f55d74 ""
+  "solution.aux" 1792853958.95704 7196 117c95d521bf9f79dbcbb509067498e6 "pdflatex"
+  "solution.out" 1792853958.55737 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792853958.26191 13803 f5e6191d158c389cfe3be15784e7e780 ""
   (generated)
   "solution.aux"
   "solution.log"

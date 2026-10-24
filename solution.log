@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  23 OCT 2026 17:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  24 OCT 2026 10:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,15 +376,9 @@ Package pdftex.def Info: figures/q2c_combined_sdf_coefficients.png  used on inpu
 
 ] (./results/q3b_gmm_summary.tex) [11
 
-] (./results/q3c_gmm_summary.tex) (./results/q3c_details.tex)
-<figures/q3c_gmm_objective.png, id=108, 578.16pt x 202.356pt>
-File: figures/q3c_gmm_objective.png Graphic file (type png)
-<use figures/q3c_gmm_objective.png>
-Package pdftex.def Info: figures/q3c_gmm_objective.png  used on input line 335.
-(pdftex.def)             Requested size: 422.77664pt x 147.97183pt.
- [12
+] (./results/q3c_gmm_summary.tex) [12
 
- <./figures/q3c_gmm_objective.png>] (./solution.aux)
+] (./solution.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -393,18 +387,18 @@ Package rerunfilecheck Info: File `solution.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10376 strings out of 469006
- 159817 string characters out of 5454814
- 591619 words of memory out of 5000000
- 38880 multiletter control sequences out of 15000+600000
+ 10361 strings out of 469006
+ 159382 string characters out of 5454814
+ 591368 words of memory out of 5000000
+ 38869 multiletter control sequences out of 15000+600000
  638680 words of font info for 82 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  75i,15n,79p,755b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on solution.pdf (12 pages, 557189 bytes).
+Output written on solution.pdf (12 pages, 429924 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 189 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
