@@ -1,17 +1,18 @@
 The instrument uses the supplied Pset 1 Q2(e) expanding-window
 forecasts, aligned to the annual return dated 12 months after the predictor.
-No additional forecast shift is applied. The denominator is the full-EQ-sample
-gross-equity variance, $\hat\sigma_e^2=0.042269$ (divisor $T_{full}$).
+No additional forecast shift is applied. The denominator is the Q3(c) estimation-sample
+gross-equity variance, $\hat\sigma_e^2=0.028811$ (divisor $T=973$),
+using December 1940 through December 2021.
 
 For common-lag selection, apply the NW94 Bartlett plug-in to
 $u_t=(g_{1,t}-\bar g_1)+(g_{2,t}-\bar g_2)$, using equal weights $(1,1)$.
 The ceiling-rounded pilot is $m=7$, the estimated constant is
-$C=2.3661$, and $L=\lceil CT^{1/3}\rceil=\lceil 23.4464\rceil=24$.
+$C=2.3616$, and $L=\lceil CT^{1/3}\rceil=\lceil 23.4013\rceil=24$.
 Use this same $L$ for every entry of $\hat S$, with centered moment vectors,
 autocovariance denominator $T-\ell$, and weights $1-\ell/(L+1)$.
 There is no prewhitening or separate degrees-of-freedom adjustment.
 \[
-\hat S=\begin{pmatrix} 0.522885 & 0.711219 \\ 0.711219 & 1.032803 \end{pmatrix}.
+\hat S=\begin{pmatrix} 0.529349 & 1.056807 \\ 1.056807 & 2.252653 \end{pmatrix}.
 \]
 Pricing-error standard errors use $\hat V_\alpha=P\hat S P'/T$,
 where $P=I-\hat G(\hat G'\hat G)^{-1}\hat G'$.

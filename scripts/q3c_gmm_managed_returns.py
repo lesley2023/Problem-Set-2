@@ -77,10 +77,6 @@ def main():
     data["R_w"] = np.exp(data["re"])
     data["R_f"] = np.exp(data["rf"])
     data["xRe"] = data["R_w"] - data["R_f"]
-    variance = data["R_w"].var(ddof=0)  # Full EQ sample, before OS alignment.
-    if not np.isfinite(variance) or variance <= 0:
-        raise ValueError("Full-sample gross-equity variance must be positive and finite.")
-
     forecasts = reproduce_forecasts(data)
     result_dir = ROOT / "results"
     figure_dir = ROOT / "figures"
@@ -94,6 +90,10 @@ def main():
     # Use the forecast for that outcome directly: do not shift a second time.
     sample = data.join(forecasts.set_index("forecast_date")[["OS_forecast"]],
                        how="inner", validate="one_to_one")
+    # Revised prompt: estimate the variance only on the aligned Q3(c) sample.
+    variance = sample["R_w"].var(ddof=0)
+    if not np.isfinite(variance) or variance <= 0:
+        raise ValueError("Estimation-sample gross-equity variance must be positive and finite.")
     sample["z_lagged"] = sample["OS_forecast"] / variance
     re = sample["re"].to_numpy()
     base_returns = np.column_stack([sample["xRe"], sample["z_lagged"] * sample["xRe"]])
@@ -172,8 +172,9 @@ def main():
     details = "\n".join([
         r"The instrument uses the supplied Pset 1 Q2(e) expanding-window",
         r"forecasts, aligned to the annual return dated 12 months after the predictor.",
-        r"No additional forecast shift is applied. The denominator is the full-EQ-sample",
-        rf"gross-equity variance, $\hat\sigma_e^2={variance:.6f}$ (divisor $T_{{full}}$).",
+        r"No additional forecast shift is applied. The denominator is the Q3(c) estimation-sample",
+        rf"gross-equity variance, $\hat\sigma_e^2={variance:.6f}$ (divisor $T={n}$),",
+        r"using December 1940 through December 2021.",
         "",
         r"For common-lag selection, apply the NW94 Bartlett plug-in to",
         r"$u_t=(g_{1,t}-\bar g_1)+(g_{2,t}-\bar g_2)$, using equal weights $(1,1)$.",
@@ -220,7 +221,8 @@ def main():
     diagnostics = (
         f"Full EQ sample: {data.index[0].date()} to {data.index[-1].date()}; T_full = {len(data)}\n"
         f"Estimation sample: {sample.index[0].date()} to {sample.index[-1].date()}; T = {n}\n"
-        f"Full-sample gross-equity variance (ddof=0) = {variance:.15g}\n"
+        f"Estimation-sample gross-equity variance (ddof=0) = {variance:.15g}\n"
+        "Variance sample: December 1940 through December 2021, after forecast alignment.\n"
         f"First predictor date: {first['predictor_date'].date()}\n"
         f"First growth training sample: {first['training_start'].date()} to "
         f"{first['training_end'].date()}; n = {first['training_observations']}\n"

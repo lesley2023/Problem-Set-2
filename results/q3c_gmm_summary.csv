@@ -1,11 +1,11 @@
 Statistic,Value
-gamma_hat,2.9851
-SE(gamma_hat),0.7159
-Pricing error g1,-0.0031
-t-statistic g1,-0.7989
-Pricing error g2,0.0022
-t-statistic g2,0.7989
-Joint Wald chi-square,0.6383
-Joint p-value (df=1),0.4243
+gamma_hat,3.0064
+SE(gamma_hat),0.7207
+Pricing error g1,-0.0038
+t-statistic g1,-0.7934
+Pricing error g2,0.0019
+t-statistic g2,0.7934
+Joint Wald chi-square,0.6294
+Joint p-value (df=1),0.4276
 T,973.0000
 L,24.0000
