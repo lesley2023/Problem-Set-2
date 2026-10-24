@@ -1,0 +1,80 @@
+Please help me write a Python script to estimate the coefficient of relative risk aversion \gamma using GMM with 21 unconditional SDF moment conditions for Question 3(e).
+
+1. Read datasets/EQ Dataset.csv to obtain the log equity returns re and log risk-free returns rf. Construct:
+   R_{w,t}=e^{r_{e,t}}, R_{f,t}=e^{r_{f,t}}
+   xR_{w,t}=R_{w,t}-R_{f,t}.
+   These are annual real returns observed monthly.
+
+2. Use the BM datset "datasets/BM_Dataset.csv" and MOM dataset "datasets/MOM_Dataset.csv", containing the monthly returns of the 10 book-to-market decile portfolios and 10 momentum decile portfolios. 
+   Also use the monthly risk-free returns RF from the Fama-French 3 Factors dataset.
+   Convert all monthly returns from percentages to decimals if necessary. For each of the 20 portfolios, construct overlapping annual nominal gross returns by compounding 12 consecutive monthly returns:
+   R_{j,t}^{nominal} = \prod_{k=0}^{11}(1+r_{j,t-k}^{monthly}).
+   
+   Construct the corresponding annual nominal gross risk-free return using the same method:
+   R_{f,t}^{nominal} =\prod_{k=0}^{11}(1+r_{f,t-k}^{monthly}).
+   Use monthly rolling windows so that each annual return is aligned with its ending month.
+
+3. Read "datasets/CPIAUCNS.csv" to obtain the monthly CPI data. Construct the annual inflation factor:   
+   \Pi_t=\frac{CPI_t}{CPI_{t-12}}.
+   Convert the annual nominal portfolio excess returns into annual real excess returns:
+   xR_{j,t}^{real}=\frac{R_{j,t}^{nominal}-R_{f,t}^{nominal}}{\Pi_t}.
+   Apply this conversion to all 10 BM and 10 MOM portfolios.
+   Merge these 20 annual real excess-return series with the EQ Dataset using the annual return ending dates. Keep only observations for which all 21 excess returns and R_{w,t} are available.
+   Report the first and last dates and the number of observations in the final estimation sample.
+   As a diagnostic, compare the reconstructed annual real risk-free return R_{f,t}^{nominal}/\Pi_t with e^{rf_t} from the EQ Dataset. Report any differences without assuming that the two datasets necessarily use identical risk-free benchmarks or inflation deflators.
+
+4. Define the vector of 21 excess returns:
+   \mathbf{xR}_t=
+   \begin{pmatrix}
+   xR_{w,t}\\
+   xR_{BM1,t}\\
+   \vdots\\
+   xR_{BM10,t}\\
+   xR_{MOM1,t}\\
+   \vdots\\
+   xR_{MOM10,t}
+   \end{pmatrix}.
+
+   Define the 21 GMM moment conditions:
+   \mathbf g_t(\gamma)=R_{w,t}^{-\gamma}\mathbf{xR}_t.
+   Calculate the vector of sample average moments:
+   \bar{\mathbf g}_T(\gamma)=\frac1T\sum_{t=1}^T\mathbf g_t(\gamma).
+   
+
+5. Estimate \gamma using GMM with the identity weighting matrix I_{21}:
+   \hat\gamma=\arg\min_\gamma
+   \bar{\mathbf g}_T(\gamma)'
+   \bar{\mathbf g}_T(\gamma).
+   Equivalently, minimize the sum of the squared sample pricing errors across all 21 portfolios.
+   Use scipy.optimize.minimize_scalar with the bounded method and \gamma\in[0,15]. Check convergence and whether the optimum is at the boundary.
+   Calculate the 21\times1 sample Jacobian \hat G evaluated at \hat\gamma.
+
+6. Estimate the 21\times21 long-run covariance matrix \hat S of the moment vector \mathbf g_t(\hat\gamma) using Newey and West (1987, 1994) HAC estimation.
+   Center each moment series by subtracting its sample mean.
+   Use the Newey and West (1987) Bartlett weighting function:
+   w_\ell=1-\frac{\ell}{L+1},
+   where L is the number of autocorrelation lags.
+   Select L using the data-driven method recommended by Newey and West (1994):
+   L=\mathrm{const}\cdot T^{1/3},
+   where T is the number of monthly observations and the optimal constant is estimated using Equation (2.2) of Newey and West (1994).
+   Use denominator T-\ell when calculating sample autocovariances, and apply ceiling rounding to the pilot truncation and final bandwidth.
+   Since there are 21 moment conditions, use a common lag L for the covariance matrix. For consistency with Q3(c), use the sum of the 21 centered moment series, with equal weights, as the scalar series for the Newey–West (1994) common-lag selection.
+   Do not assume a fixed lag length in advance. Report the selected L and estimate \hat S. Save the full covariance matrix to a CSV file if it is too large to display clearly.
+
+7. Calculate the GMM standard error of \hat\gamma using the identity-weighting GMM sandwich variance formula:
+   \widehat{\operatorname{Var}}(\hat\gamma)=\frac1T(\hat G'\hat G)^{-1}\hat G'\hat S\hat G(\hat G'\hat G)^{-1}.
+   Calculate the estimated pricing error of each of the 21 moment conditions and its t-statistic, accounting for the estimation of \gamma.
+   Use the pricing-error projection matrix:
+   \hat P=I_{21}-\hat G(\hat G'\hat G)^{-1}\hat G'
+   and the covariance matrix:
+   \hat V_e=\frac1T\hat P\hat S\hat P'.
+   Calculate each pricing-error t-statistic using the corresponding diagonal element of \hat V_e.
+   Also calculate a joint Wald \chi^2 test of whether all 21 pricing errors are jointly zero:
+   J=\bar{\mathbf g}_T(\hat\gamma)'\hat V_e^+ \bar{\mathbf g}_T(\hat\gamma),
+   where + denotes the Moore–Penrose pseudoinverse.
+   Since there are 21 moment conditions and one estimated parameter, use 20 degrees of freedom for the joint test.
+
+8. Generate a table reporting the estimated \hat\gamma, its standard error, the pricing errors and their t-statistics for all 21 portfolios, the joint \chi^2 statistic and p-value, the number of observations, and the selected Newey–West lag length. Round results to four decimal places.
+   Keep the equity, BM, and MOM portfolio labels clearly identified in the table.
+
+Please keep the code straightforward and use pandas, numpy, and scipy. Reuse the GMM estimation and Newey–West functions from Q3(c) wherever possible, extending them from 2 moment conditions to 21 moment conditions. Use the identity weighting matrix as required by Q3(e).
