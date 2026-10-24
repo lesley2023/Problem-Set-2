@@ -1,0 +1,22 @@
+The common estimation sample contains 1,129 monthly observations from December 1927 through December 2021.
+Monthly value-weighted BM and MOM decile returns and Fama--French RF are
+converted from percentages to decimals before compounding 12 monthly gross returns.
+Each annual nominal excess return is divided by $CPI_t/CPI_{t-12}$ and
+aligned with the EQ annual return ending in the same month.
+The bounded optimization on $[0,15]$ converged to an interior estimate; $\hat\gamma=1.9314$.
+
+The common HAC lag uses the equal-weight sum of all 21 centered moments.
+The pilot truncation is $m=7$, the NW94 constant is $C=2.4475$,
+and $L=\lceil CT^{1/3}\rceil=\lceil 25.4856\rceil=26$.
+Centered Bartlett autocovariances use divisor $T-\ell$.
+The full $21\times21$ HAC matrix is saved in \texttt{results/q3e\_hac\_matrix.csv}.
+The pricing-error covariance accounts for estimation of $\gamma$; the joint test uses 20 degrees of freedom.
+The unrounded joint-test $p$-value is approximately $2.965\times10^{-32}$.
+
+The reconstructed annual real risk-free gross return and $e^{rf_t}$ are compared on the same sample.
+Their mean signed difference (reconstructed minus EQ) is -0.000003,
+mean absolute difference is 0.000012,
+root mean squared difference is 0.000037,
+and maximum absolute difference is 0.000203.
+Their correlation is 0.999999520.
+No identity of risk-free benchmarks or inflation deflators is imposed.

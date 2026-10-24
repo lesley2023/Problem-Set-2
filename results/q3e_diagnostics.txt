@@ -1,0 +1,19 @@
+Common sample: 1927-12 through 2021-12; T = 1129; moments = 21
+EQ dates excluded for unavailable complete inputs: 0
+BM/MOM monthly value-weighted deciles; all monthly input returns divided by 100.
+Nominal annual gross returns: product of 12 monthly gross returns, ending-month alignment.
+Inflation: CPI_t / CPI_(t-12). Real portfolio excess: (nominal portfolio - nominal RF)/inflation.
+Bounded optimizer: success=True; bounds=[0,15]; boundary=False
+gamma_hat = 1.93143876144651; SE = 0.609262415772463; objective = 0.0200255196382398
+Endpoint objectives: gamma=0: 0.203686804820876; gamma=15: 13724229.2503581
+G' gbar first-order-condition residual: 3.392965851854723e-10
+Bandwidth details: {'pilot': 7, 's0': np.float64(456.9860760464379), 's1': np.float64(1428.764909294044), 'constant': np.float64(2.4475423841737363), 'bandwidth': np.float64(25.48560035374935)}; common lag = 26
+Smallest HAC eigenvalue: 0.00156164702957542
+Pricing-error covariance rank: 20; joint df = 20
+Joint Wald chi-square(20) = 202.926284007781; p-value = 2.96498301719592e-32
+Risk-free differences are reconstructed annual real gross return minus exp(EQ rf).
+Mean signed difference: -3.2238066504559e-06
+Mean absolute difference: 1.17544935041372e-05
+Root mean squared difference: 3.71275186327688e-05
+Maximum absolute difference: 0.00020251839347063
+Correlation: 0.999999519718381

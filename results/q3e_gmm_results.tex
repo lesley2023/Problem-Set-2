@@ -1,0 +1,46 @@
+\begin{table}[!htbp]
+  \centering
+  \small
+  \caption{Identity-weighting GMM with 21 moments. Annual real returns
+  observed monthly, December 1927 through December 2021. Results are rounded to four decimal places.
+  BM and MOM numbers denote deciles from low to high.}
+  \label{tab:q3e-gmm-results}
+  \begin{tabular}{lrr}
+    \toprule
+    Statistic & \multicolumn{2}{r}{Value} \\
+    \midrule
+    Risk aversion $\hat\gamma$ & \multicolumn{2}{r}{1.9314} \\
+    Standard error $SE(\hat\gamma)$ & \multicolumn{2}{r}{0.6093} \\
+    Joint Wald $\chi^2(20)$ statistic & \multicolumn{2}{r}{202.9263} \\
+    Joint-test $p$-value & \multicolumn{2}{r}{0.0000} \\
+    Observations $T$ & \multicolumn{2}{r}{1129} \\
+    Common HAC lag $L$ & \multicolumn{2}{r}{26} \\
+    \midrule
+    Portfolio & Pricing error & $t$-statistic \\
+    \midrule
+    Equity & -0.0012 & -0.3150 \\
+    \addlinespace
+    BM1 & -0.0079 & -0.7976 \\
+    BM2 & 0.0108 & 1.5213 \\
+    BM3 & 0.0031 & 0.5205 \\
+    BM4 & -0.0022 & -0.3897 \\
+    BM5 & 0.0076 & 1.0870 \\
+    BM6 & 0.0135 & 1.6334 \\
+    BM7 & -0.0021 & -0.2321 \\
+    BM8 & 0.0208 & 2.6781 \\
+    BM9 & 0.0317 & 3.4069 \\
+    BM10 & 0.0175 & 1.2359 \\
+    \addlinespace
+    MOM1 & -0.0984 & -7.9325 \\
+    MOM2 & -0.0426 & -5.1481 \\
+    MOM3 & -0.0299 & -3.1821 \\
+    MOM4 & -0.0119 & -1.6900 \\
+    MOM5 & -0.0009 & -0.1448 \\
+    MOM6 & -0.0004 & -0.0863 \\
+    MOM7 & 0.0109 & 1.5880 \\
+    MOM8 & 0.0242 & 4.3724 \\
+    MOM9 & 0.0295 & 3.7306 \\
+    MOM10 & 0.0611 & 4.7192 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -344,4 +344,21 @@ The estimated pricing errors for the equity portfolio and the managed portfolio 
 \input{results/q3d_gmm_summary.tex}
 \FloatBarrier
 
+\clearpage
+\subsection*{(e)}
+\input{results/q3e_gmm_results.tex}
+\FloatBarrier
+\clearpage
+\input{results/q3e_details.tex}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/q3e_gmm_results.png}
+  \caption{The 21-moment identity-weighting GMM objective on the specified
+  parameter interval (logarithmic vertical scale), and pricing-error
+  $t$-statistics adjusted for estimation of $\gamma$. Portfolio labels identify
+  equity, book-to-market deciles, and momentum deciles.}
+  \label{fig:q3e-gmm-results}
+\end{figure}
+\FloatBarrier
+
 \end{document}
