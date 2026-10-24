@@ -338,16 +338,10 @@ This suggests that the data do not provide sufficient evidence to reject the pri
 
 \clearpage
 \subsection*{(d)}
+For the two-step GMM estimation, I use the inverse of the Newey–West covariance matrix estimated in Q3(c) as the weighting matrix. The resulting estimate of risk aversion is \(\hat\gamma_2=2.9508\), with a standard error of 0.7106, compared with the first-step estimate of 3.0064.
+
+The estimated pricing errors for the equity portfolio and the managed portfolio are -0.0020 and 0.0055, respectively. Neither is statistically significant. The joint \(\chi^2(1)\) test yields a p-value of 0.4192, so we fail to reject the null hypothesis that both pricing errors are jointly zero at conventional significance levels.
 \input{results/q3d_gmm_summary.tex}
-\input{results/q3d_details.tex}
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{figures/q3d_gmm_objectives.png}
-  \caption{First- and second-step GMM objectives. Each dashed line marks the
-  estimate for that step; the second-step objective uses the fixed matrix
-  $W_2=\hat S_1^{-1}$. The panels use separate vertical scales.}
-  \label{fig:q3d-gmm-objectives}
-\end{figure}
 \FloatBarrier
 
 \end{document}
