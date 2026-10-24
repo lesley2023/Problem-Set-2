@@ -346,19 +346,13 @@ The estimated pricing errors for the equity portfolio and the managed portfolio 
 
 \clearpage
 \subsection*{(e)}
+Table \ref{tab:q3e-gmm-results} reports the identity-weighted GMM estimation results using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
+
+Several individual pricing errors are statistically significant, suggesting that the power-utility SDF does not price all portfolios equally well.
+
+The joint \(\chi^2(20)\) test yields a p-value of 0.0000, so we reject the null hypothesis that all 21 pricing errors are jointly zero at conventional significance levels. This suggests that the power-utility SDF does not adequately capture the return differences across the equity, BM, and MOM portfolios.
 \input{results/q3e_gmm_results.tex}
-\FloatBarrier
-\clearpage
-\input{results/q3e_details.tex}
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{figures/q3e_gmm_results.png}
-  \caption{The 21-moment identity-weighting GMM objective on the specified
-  parameter interval (logarithmic vertical scale), and pricing-error
-  $t$-statistics adjusted for estimation of $\gamma$. Portfolio labels identify
-  equity, book-to-market deciles, and momentum deciles.}
-  \label{fig:q3e-gmm-results}
-\end{figure}
+
 \FloatBarrier
 
 \end{document}
