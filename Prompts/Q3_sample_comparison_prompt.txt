@@ -1,0 +1,5 @@
+@TP I want to understand why the estimated \gamma differs across Q3(b)–Q3(e), particularly whether the differences are driven by the estimation sample or the moment conditions.
+To investigate this, reuse the existing Python scripts and datasets for Q3(b) and Q3(e). Do not change the original estimation methods, moment conditions, return construction, or weighting matrices. Only restrict the estimation sample to December 1940 through December 2021, consistent with Q3(c) and Q3(d).
+Re-estimate \gamma and its standard error for Q3(b) and Q3(e) using this restricted sample. Then generate a comparison table reporting the original and restricted-sample estimates alongside the existing Q3(c) and Q3(d) results.
+Add the comparison table after Q3(e) in my LaTeX solution.
+Keep all original results unchanged. This is only an additional check to help explain the differences in the estimated risk-aversion coefficients.

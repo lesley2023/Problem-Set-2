@@ -1,0 +1,7 @@
+Question,Sample,Start,End,Moments,Weight,T,L,gamma,SE
+Q3(b),Original,1927-12,2021-12,1,Identity,1129,26,1.9061,0.6026
+Q3(b),Restricted,1940-12,2021-12,1,Identity,973,24,2.8878,0.7086
+Q3(c),Existing,1940-12,2021-12,2,Identity,973,24,3.0064,0.7207
+Q3(d),Existing,1940-12,2021-12,2,Inverse first-step HAC,973,24,2.9508,0.7106
+Q3(e),Original,1927-12,2021-12,21,Identity,1129,26,1.9314,0.6093
+Q3(e),Restricted,1940-12,2021-12,21,Identity,973,24,3.0359,0.7088

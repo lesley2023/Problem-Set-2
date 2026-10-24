@@ -1,0 +1,32 @@
+\begin{table}[!htbp]
+  \centering
+  \small
+  \caption{Additional sample comparison for Question 3.
+  Original samples run from December 1927 through December 2021;
+  restricted samples and existing Q3(c)/(d) results use December 1940
+  through December 2021. Estimates and standard errors are rounded to four decimal places.}
+  \label{tab:q3-sample-comparison}
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{llrlrrrr}
+    \toprule
+    Model & Sample & Moments & Weight & $T$ & $L$ & $\hat\gamma$ & $SE$ \\
+    \midrule
+    Q3(b) & Original & 1 & $I$ & 1129 & 26 & 1.9061 & 0.6026 \\
+    Q3(b) & Restricted & 1 & $I$ & 973 & 24 & 2.8878 & 0.7086 \\
+    Q3(c) & Existing & 2 & $I$ & 973 & 24 & 3.0064 & 0.7207 \\
+    Q3(d) & Existing & 2 & $\hat S_1^{-1}$ & 973 & 24 & 2.9508 & 0.7106 \\
+    Q3(e) & Original & 21 & $I$ & 1129 & 26 & 1.9314 & 0.6093 \\
+    Q3(e) & Restricted & 21 & $I$ & 973 & 24 & 3.0359 & 0.7088 \\
+    \bottomrule
+  \end{tabular}
+  \par\medskip
+  \begin{minipage}{0.97\textwidth}\footnotesize
+  Only Q3(b) and Q3(e) are re-estimated on the restricted sample.
+  Their original moment conditions, return construction, identity weights,
+  optimization methods, and HAC rules are retained. Annual returns are
+  constructed before restricting dates; HAC lags are selected anew on the
+  restricted moments. Q3(c) and Q3(d) are copied from their saved results;
+  the Q3(d) lag shown is the second-step lag. $I$ denotes the identity matrix
+  of the appropriate dimension. All original results are retained.
+  \end{minipage}
+\end{table}

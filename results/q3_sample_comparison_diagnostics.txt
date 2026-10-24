@@ -1,0 +1,5 @@
+Q3(b) restricted: gamma=2.88775622193913, SE=0.708600943073738, T=973, L=24, objective=3.3329956311511e-34, FOC=-5.810299363313997e-19
+Q3(e) restricted: gamma=3.03587624268776, SE=0.70883341073191, T=973, L=24, objective=0.0196215791796148, FOC=1.031264613635119e-11
+Full-sample Q3(b)/(e) gamma, SE, T and L reproduce the saved outputs (tolerance 1e-12).
+Q3(c)/(d) estimates and dates are read from saved results, not re-estimated.
+Verified SHA-256 preservation of 102 original script/data/result/figure files.
