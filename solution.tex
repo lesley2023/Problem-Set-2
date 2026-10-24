@@ -348,9 +348,11 @@ The estimated pricing errors for the equity portfolio and the managed portfolio 
 \subsection*{(e)}
 Table \ref{tab:q3e-gmm-results} reports the identity-weighted GMM estimation results using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
 
-Several individual pricing errors are statistically significant, suggesting that the power-utility SDF does not price all portfolios equally well.
+To ensure consistency with the annual real returns in the EQ Dataset, I compound the monthly nominal returns of the BM and MOM portfolios and the risk-free rate over 12 months, calculate the annual nominal excess returns, and then deflate them using the corresponding 12-month CPI inflation factor. The sample covers December 1927 through December 2021.
 
-The joint \(\chi^2(20)\) test yields a p-value of 0.0000, so we reject the null hypothesis that all 21 pricing errors are jointly zero at conventional significance levels. This suggests that the power-utility SDF does not adequately capture the return differences across the equity, BM, and MOM portfolios.
+Several individual pricing errors are statistically significant, particularly among the momentum portfolios, suggesting that the power-utility SDF does not price all portfolios equally well.
+
+The joint \(\chi^2(20)\) test yields a p-value of 0.0000, so we reject the null hypothesis that all 21 pricing errors are jointly zero at conventional significance levels. 
 \input{results/q3e_gmm_results.tex}
 
 \FloatBarrier
