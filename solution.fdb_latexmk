@@ -1,5 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792863506.21577 "solution.tex" "solution.pdf" "solution" 1792863506.80963 0
+["pdflatex"] 1792866282.49442 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792866283.21419 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792866276.28667 14426 f6c9846ca7bdc0ddaa1dcf4c9274aee8 ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -98,6 +99,7 @@
   "figures/q2a_bm_sdf_coefficients.png" 1792716290.19629 93540 7b1b636b138146d62848a77baf9fe44e ""
   "figures/q2b_mom_sdf_coefficients.png" 1792716678.91545 96744 c9b19189e8c9d062c44189bdaed4fd41 ""
   "figures/q2c_combined_sdf_coefficients.png" 1792718117.16108 108916 75cd018fbe6558832232a6f1f7bcfade ""
+  "figures/q3d_gmm_objectives.png" 1792866280.08242 140804 c41914f744befc5afcb4910590c8681a ""
   "results/q2a_bm_parameters.tex" 1792716290.06586 668 9762a1fa6c294905718226c35d088962 ""
   "results/q2b_bm_mom_correlation.tex" 1792716678.77204 226 fb432b995fcb661d0ed7ad1808b4624a ""
   "results/q2b_mom_parameters.tex" 1792716678.7646 670 e57b5daa02dd1c5683bd596007661417 ""
@@ -107,9 +109,11 @@
   "results/q2e_os_pricing_errors.tex" 1792722592.84516 1194 6ecb036f09e41d76c37ed1eb9082195c ""
   "results/q3b_gmm_summary.tex" 1792788500.04502 624 d598add48507edf4f46678b723b7de76 ""
   "results/q3c_gmm_summary.tex" 1792863459.24909 748 902dfddac5512a9b1beec007530f0514 ""
-  "solution.aux" 1792863506.76091 7196 117c95d521bf9f79dbcbb509067498e6 "pdflatex"
-  "solution.out" 1792863506.36468 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792863491.36195 13948 e1450c0753664107510e9f2bae7e53a9 ""
+  "results/q3d_details.tex" 1792866279.91363 908 3a3dcb568b46373d23e3951653734696 ""
+  "results/q3d_gmm_summary.tex" 1792866279.91355 859 3ea2a9756d69fda2ac3f7a0af30300df ""
+  "solution.aux" 1792866283.17667 8133 e471e5f6e4bd143c19a9a141ad37680c "pdflatex"
+  "solution.out" 1792866282.63663 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792866276.28667 14426 f6c9846ca7bdc0ddaa1dcf4c9274aee8 ""
   (generated)
   "solution.aux"
   "solution.log"

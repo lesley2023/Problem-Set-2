@@ -336,4 +336,18 @@ This suggests that the data do not provide sufficient evidence to reject the pri
 %\input{results/q3c_details.tex}
 \FloatBarrier
 
+\clearpage
+\subsection*{(d)}
+\input{results/q3d_gmm_summary.tex}
+\input{results/q3d_details.tex}
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/q3d_gmm_objectives.png}
+  \caption{First- and second-step GMM objectives. Each dashed line marks the
+  estimate for that step; the second-step objective uses the fixed matrix
+  $W_2=\hat S_1^{-1}$. The panels use separate vertical scales.}
+  \label{fig:q3d-gmm-objectives}
+\end{figure}
+\FloatBarrier
+
 \end{document}

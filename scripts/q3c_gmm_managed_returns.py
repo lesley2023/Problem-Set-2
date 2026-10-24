@@ -63,7 +63,8 @@ def moment_hac(moment_matrix):
     return covariance, lag, details
 
 
-def main():
+def load_estimation_sample(reuse_saved_forecasts=False):
+    """Shared Q3(c)/(d) inputs; saved forecasts already name outcome dates."""
     data = pd.read_csv(ROOT / "datasets/EQ Dataset.csv")
     data.index = pd.DatetimeIndex(pd.to_datetime(dict(
         year=data["YEAR"], month=data["MONTH"], day=1,
@@ -78,14 +79,13 @@ def main():
     data["R_f"] = np.exp(data["rf"])
     data["xRe"] = data["R_w"] - data["R_f"]
     forecasts = reproduce_forecasts(data)
-    result_dir = ROOT / "results"
-    figure_dir = ROOT / "figures"
-    result_dir.mkdir(exist_ok=True)
-    figure_dir.mkdir(exist_ok=True)
-    forecasts[["forecast_date", "OS_forecast"]].to_csv(
-        ROOT / "datasets/q2e_os_forecasts.csv", index=False, date_format="%Y-%m-%d",
-    )
-    forecasts.to_csv(result_dir / "q3c_forecast_alignment.csv", index=False, date_format="%Y-%m-%d")
+    if reuse_saved_forecasts:
+        saved = pd.read_csv(ROOT / "datasets/q2e_os_forecasts.csv", parse_dates=["forecast_date"])
+        if not pd.DatetimeIndex(saved["forecast_date"]).equals(
+            pd.DatetimeIndex(forecasts["forecast_date"])
+        ) or not np.allclose(saved["OS_forecast"], forecasts["OS_forecast"], rtol=0, atol=1e-14):
+            raise ValueError("Saved forecasts do not reproduce the specified Pset 1 construction.")
+        forecasts["OS_forecast"] = saved["OS_forecast"].to_numpy()
     # forecast_date already names the predicted annual outcome's date.
     # Use the forecast for that outcome directly: do not shift a second time.
     sample = data.join(forecasts.set_index("forecast_date")[["OS_forecast"]],
@@ -95,6 +95,19 @@ def main():
     if not np.isfinite(variance) or variance <= 0:
         raise ValueError("Estimation-sample gross-equity variance must be positive and finite.")
     sample["z_lagged"] = sample["OS_forecast"] / variance
+    return data, forecasts, sample, variance
+
+
+def main():
+    data, forecasts, sample, variance = load_estimation_sample()
+    result_dir = ROOT / "results"
+    figure_dir = ROOT / "figures"
+    result_dir.mkdir(exist_ok=True)
+    figure_dir.mkdir(exist_ok=True)
+    forecasts[["forecast_date", "OS_forecast"]].to_csv(
+        ROOT / "datasets/q2e_os_forecasts.csv", index=False, date_format="%Y-%m-%d",
+    )
+    forecasts.to_csv(result_dir / "q3c_forecast_alignment.csv", index=False, date_format="%Y-%m-%d")
     re = sample["re"].to_numpy()
     base_returns = np.column_stack([sample["xRe"], sample["z_lagged"] * sample["xRe"]])
     n = len(sample)

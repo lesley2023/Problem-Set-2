@@ -1,0 +1,13 @@
+The sample and forecast alignment are identical to Question 3(c).
+The constant instrument denominator is $\hat\sigma_e^2=0.02881125$ (divisor $T=973$).
+The second step holds $W_2=\hat S_1^{-1}$ fixed during optimization.
+Both steps use the unconstrained Brent method, as in Question 3(c).
+The common lag is selected separately at each estimate from the equal-weight sum
+of the two centered moments, using the specified NW94 ceiling rules.
+The centered Bartlett HAC autocovariances use divisor $T-\ell$.
+\[
+\hat S_1=\begin{pmatrix} 0.5293 & 1.0568 \\ 1.0568 & 2.2527 \end{pmatrix},\qquad \hat S_2=\begin{pmatrix} 0.5128 & 1.0225 \\ 1.0225 & 2.1765 \end{pmatrix}.
+\]
+The reported standard error uses the two-step sandwich with $W_2$ and $\hat S_2$.
+Pricing-error tests account for estimation of $\gamma$ using the specified
+$\hat P_2\hat S_2\hat P_2'/T$ covariance and a one-degree-of-freedom joint Wald test.

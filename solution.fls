@@ -2,7 +2,7 @@ PWD /Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/
 INPUT /usr/local/texlive/2026basic/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT solution.tex
+INPUT /Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex
 OUTPUT solution.log
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls
@@ -209,6 +209,17 @@ INPUT results/q3b_gmm_summary.tex
 INPUT ./results/q3c_gmm_summary.tex
 INPUT ./results/q3c_gmm_summary.tex
 INPUT results/q3c_gmm_summary.tex
+INPUT ./results/q3d_gmm_summary.tex
+INPUT ./results/q3d_gmm_summary.tex
+INPUT results/q3d_gmm_summary.tex
+INPUT ./results/q3d_details.tex
+INPUT ./results/q3d_details.tex
+INPUT results/q3d_details.tex
+INPUT ./figures/q3d_gmm_objectives.png
+INPUT ./figures/q3d_gmm_objectives.png
+INPUT ./figures/q3d_gmm_objectives.png
+INPUT ./figures/q3d_gmm_objectives.png
+INPUT ./figures/q3d_gmm_objectives.png
 INPUT solution.aux
 INPUT ./solution.out
 INPUT ./solution.out

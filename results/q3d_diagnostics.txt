@@ -1,0 +1,28 @@
+Estimation sample: 1940-12-01 to 2021-12-01; T = 973
+Estimation-sample gross-equity variance (ddof=0): 0.0288112483697638
+Saved forecasts verified against the Q3(c)/Pset 1 construction; no additional shift.
+First predictor: 1939-12-01; first outcome: 1940-12-01
+Optimization: unconstrained Brent, xtol=1e-13, maxiter=1000, same as Q3(c).
+Step 1 gamma: 3.00641966850377; FOC G1' gbar1: -2.976360070948772e-12
+Step 1 bandwidth: {'pilot': 7, 's0': np.float64(5.407329203971445), 's1': np.float64(16.02321669780475), 'constant': np.float64(2.3615815458422156), 'bandwidth': np.float64(23.40133101810474)}; L1 = 24
+S1:
+[[0.52934899 1.05680657]
+ [1.05680657 2.25265329]]
+W2 = inverse(S1), fixed throughout step 2:
+[[ 29.79715019 -13.97899275]
+ [-13.97899275   7.00200577]]
+Step 2 gamma: 2.95084395369993; FOC G2' W2 gbar2: 5.325194864062854e-11
+Step 2 bandwidth: {'pilot': 7, 's0': np.float64(5.233612992274643), 's1': np.float64(15.548903758387802), 'constant': np.float64(2.365686163966003), 'bandwidth': np.float64(23.442004408183852)}; L2 = 24
+S2:
+[[0.51275668 1.02247341]
+ [1.02247341 2.17653787]]
+G2: [-0.03209465 -0.06590161]
+Gamma sandwich variance: 0.505005147291777
+SE(gamma2): 0.710637141790222
+Pricing errors: [-0.00201622  0.00553058]
+Pricing-error covariance (rank one):
+[[ 6.23003633e-06 -1.70892671e-05]
+ [-1.70892671e-05  4.68766210e-05]]
+Pricing-error t-statistics: [-0.80778016  0.80777955]
+Joint Wald chi-square(1): 0.652507923702448
+p-value: 0.419217455970874
