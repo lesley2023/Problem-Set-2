@@ -10,7 +10,7 @@ Please help me write a Python script to estimate the coefficient of relative ris
    where G_t is the expanding-window historical mean of e^{dg}, calculated using the same historical sample as in Q2(e).
    Generate and save datasets/q2e_os_forecasts.csv, containing forecast_date and OS_forecast, covering December 1940 through December 2021. Align each forecast with the annual realized excess return it predicts. Do not shift the forecasts again after alignment.
 
-3. Calculate the unconditional variance \hat\sigma_e^2 of gross equity returns using only the Q3(c) estimation sample from December 1940 through December 2021 (973 observations), with ddof=0. Construct the trading instrument:
+3. Calculate the unconditional variance \hat\sigma_e^2 of gross equity returns using only the Q3(c) estimation sample from December 1940 through December 2021, with ddof=0. Construct the trading instrument:
    z_{t-1}=\frac{\widehat E_{t-1}^{OS}[xR_e]}{\hat\sigma_e^2}
    Use the overlapping out-of-sample observations from December 1940 through December 2021.
 

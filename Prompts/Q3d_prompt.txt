@@ -9,7 +9,7 @@ Please help me write a Python script to estimate the coefficient of relative ris
    where G_t is the expanding-window historical mean of e^{dg}, calculated using the same historical sample as in Q2(e).
    Reuse datasets/q2e_os_forecasts.csv, containing forecast_date and OS_forecast, covering December 1940 through December 2021. Align each forecast with the annual realized excess return it predicts. Do not shift the forecasts again after alignment.
 
-3. Calculate the unconditional variance \hat\sigma_e^2 of gross equity returns R_{e,t}=e^{r_{e,t}} using only the estimation sample from December 1940 through December 2021 (973 observations), with ddof=0. Construct the trading instrument:
+3. Calculate the unconditional variance \hat\sigma_e^2 of gross equity returns R_{e,t}=e^{r_{e,t}} using only the estimation sample from December 1940 through December 2021, with ddof=0. Construct the trading instrument:
    z_{t-1}=\frac{\widehat E_{t-1}^{OS}[xR_e]}{\hat\sigma_e^2}.
    Use the same constant variance and trading instrument construction as in Q3(c).
 
@@ -60,6 +60,5 @@ Please help me write a Python script to estimate the coefficient of relative ris
    where + denotes the Moore–Penrose pseudoinverse. Use one degree of freedom.
 
 8. Generate a table reporting the second-step GMM estimate \hat\gamma_2, its standard error, the pricing errors and their t-statistics for both moments, the joint \chi^2 statistic and p-value, and the number of observations. Round results to four decimal places.
-   Also produce a comparison table showing the Q3(c) identity-weighted GMM results and the Q3(d) two-step GMM results.
 
-Please keep the code straightforward and use pandas, numpy, and scipy. Reuse the existing Q3(c) data construction, forecasting methodology, and Newey–West estimation functions wherever possible. The main change from Q3(c) should be the use of \hat S_1^{-1} as the fixed weighting matrix in the second-step GMM estimation.
+Please keep the code straightforward and use pandas, numpy, and scipy. Reuse the existing Q3(c) data construction, forecasting methodology, and Newey–West estimation functions wherever possible. 
