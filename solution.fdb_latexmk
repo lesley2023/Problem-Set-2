@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792880442.13643 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792880442.72938 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792880434.24472 15751 69892a1b2464153b22e4b8de5590a598 ""
+["pdflatex"] 1792881153.34301 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1792881153.95133 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1792881153.17176 16935 d0171bb4d27fa696221e3f8dd720c44b ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -119,9 +119,9 @@
   "results/q3c_gmm_summary.tex" 1792863459.24909 748 902dfddac5512a9b1beec007530f0514 ""
   "results/q3d_gmm_summary.tex" 1792866279.91355 859 3ea2a9756d69fda2ac3f7a0af30300df ""
   "results/q3e_gmm_results.tex" 1792870220.00135 1555 3bf5cdfc79cc0838e9a8353196d432d3 ""
-  "solution.aux" 1792880442.68598 8851 fc6a37afb42e7a05964336ee6092f070 "pdflatex"
-  "solution.out" 1792880442.28391 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1792880434.24472 15751 69892a1b2464153b22e4b8de5590a598 ""
+  "solution.aux" 1792881153.90999 8851 fc6a37afb42e7a05964336ee6092f070 "pdflatex"
+  "solution.out" 1792881153.50296 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1792881153.17176 16935 d0171bb4d27fa696221e3f8dd720c44b ""
   (generated)
   "solution.aux"
   "solution.log"

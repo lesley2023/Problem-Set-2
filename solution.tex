@@ -359,6 +359,11 @@ The joint \(\chi^2(20)\) test yields a p-value of 0.0000, so we reject the null 
 
 \clearpage
 \subsubsection*{Additional check: common estimation sample}
+I noticed that the estimated risk-aversion coefficient \(\hat\gamma\) varies considerably across Q3(b)–Q3(e). In Q3(b) and Q3(e), the estimates are 1.9061 and 1.9314, respectively, while Q3(c) and Q3(d) produce higher estimates of 3.0064 and 2.9508. One possible explanation is the difference in estimation periods: Q3(b) and Q3(e) use December 1927 through December 2021, whereas Q3(c) and Q3(d) use December 1940 through December 2021.
+
+To investigate this, I re-estimate Q3(b) and Q3(e) using the restricted sample from December 1940 through December 2021, keeping their original moment conditions, weighting matrices, and estimation methods unchanged. Table \ref{tab:q3-sample-comparison} reports the comparison.
+
+After restricting the sample, the estimated \(\hat\gamma\) increases from 1.9061 to 2.8878 for Q3(b), and from 1.9314 to 3.0359 for Q3(e). The estimates across all four specifications are now much closer, ranging from 2.8878 to 3.0359. This suggests that differences in the estimation periods account for a substantial part of the variation in \(\hat\gamma\), while the remaining differences may reflect the different moment conditions and GMM weighting matrices.
 \input{results/q3_sample_comparison.tex}
 \FloatBarrier
 
