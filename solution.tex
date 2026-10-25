@@ -445,18 +445,15 @@ The joint \(\chi^2(20)\) test yields a statistic of \(231.3234\) and a p-value o
 
 \clearpage
 \subsection*{(c)}
+Table \ref{tab:q4c-gmm-results} reports the two-step efficient GMM estimation results for the normalized linear SDF using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
+
+Using the inverse of the estimated Newey–West long-run covariance matrix as the weighting matrix, the estimated SDF coefficient is \(\hat b=1.6123\), with a standard error of \(0.3925\). Compared with the identity-weighted GMM results in Question 4(b), both the coefficient estimate and its standard error decrease.
+
+Several individual pricing errors remain statistically significant, particularly among the momentum portfolios, suggesting that the linear SDF does not price all portfolios equally well.
+
+The efficient-GMM \(J\)-test yields a \(\chi^2(20)\) statistic of \(231.3234\) and a p-value of \(0.0000\), so we reject the null hypothesis that all 21 pricing errors are jointly zero at conventional significance levels. This conclusion is consistent with the identity-weighted GMM results in Question 4(b).
 \input{results/q4c_gmm_results.tex}
-\FloatBarrier
-\clearpage
-\input{results/q4c_details.tex}
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{figures/q4c_gmm_results.png}
-  \caption{The fixed-weight second-step GMM objective and a comparison of
-  pricing-error $t$-statistics for Q4(b) and Q4(c). Both sets of $t$-statistics
-  account for estimation of the SDF coefficient and the mean wealth return.}
-  \label{fig:q4c-gmm-results}
-\end{figure}
+
 \FloatBarrier
 
 \end{document}
