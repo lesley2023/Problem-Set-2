@@ -1,0 +1,25 @@
+The sample is unchanged from Question 4(b): 1,129 monthly observations of annual real returns
+from December 1927 through December 2021.
+The first-step estimate is $\hat b_{4b}=1.9356$ with $L_1=26$.
+The first-step HAC matrix is positive definite, with condition number 12355.10.
+Its inverse $\hat W=\hat S_1^{-1}$ is held fixed in the analytical second-step calculation.
+The fitted SDF is $\hat M_t=1-1.612320(R_{w,t}-\bar R_w)$; its unrounded sample mean is 1.
+
+The second-step HAC uses the adjusted series specified in the prompt, including the
+correction for estimation of $E[R_w]$. The lag uses the equal-weight sum of all 21 centered adjusted series.
+The pilot is $m=7$, $C=2.4753$, and
+$L_2=\lceil CT^{1/3}\rceil=\lceil 25.7748\rceil=26$.
+Bartlett autocovariances retain divisor $T-\ell$.
+The full second-step covariance is saved in \texttt{results/q4c\_hac\_step2.csv}.
+The efficient $J$-test $p$-value is approximately $6.495\times10^{-38}$;
+the separate covariance-adjusted Wald $p$-value is approximately $6.034\times10^{-40}$.
+
+Relative to Q4(b), the coefficient changes from 1.9356 to 1.6123,
+and its standard error changes from 0.6425 to 0.3925.
+The maximum absolute sample pricing error changes from 0.1076
+to 0.0875.
+The covariance-adjusted Wald statistic is 231.3234 in Q4(b) and 241.4446 in Q4(c);
+the separate Q4(c) efficient-GMM $J$ statistic is 231.3234.
+The Q4(b) covariance-adjusted Wald $p$-value is approximately $6.495\times10^{-38}$.
+The figure compares all 21 pricing-error $t$-statistics; full numerical portfolio comparisons
+are saved in \texttt{results/q4c\_portfolio\_comparison.csv}.

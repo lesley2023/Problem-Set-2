@@ -1,0 +1,15 @@
+Statistic,Value
+b_hat,1.6123
+SE(b_hat),0.3925
+Efficient GMM J,231.3234
+J p-value (df=20),0.0000
+T,1129.0000
+L2,26.0000
+Adjusted Wald chi-square,241.4446
+Wald p-value (df=20),0.0000
+First-step b_hat,1.9356
+L1,26.0000
+Mean R_w,1.0877
+Mean SDF,1.0000
+a_hat,2.7538
+Condition number S1,12355.0972

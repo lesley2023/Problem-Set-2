@@ -1,0 +1,13 @@
+Sample: 1927-12 through 2021-12; T=1129; moments=21
+First-step b=1.93562825408808; SE=0.642518292197438; L1=26
+First-step saved covariance verified against Q4(b); W=inverse(S1), fixed in step 2.
+Condition number S1=12355.0971862522; smallest eigenvalue=0.00181859606527235
+Second-step estimator: analytical (c'W mu)/(c'W c); no numerical optimization.
+b_hat=1.61232022374443; SE=0.392472483084961; a_hat=2.75377600880405; mean SDF=1
+Weighted FOC G'W e=1.734723475976807e-18
+Second-step adjusted HAC bandwidth: {'pilot': 7, 's0': np.float64(326.0307094943706), 's1': np.float64(1036.7304145254475), 'constant': np.float64(2.475311748811418), 'bandwidth': np.float64(25.77475527658531)}; L2=26
+Smallest S2 eigenvalue=0.00182968808214329
+HAC uses the moment adjustment for estimated mean R_w at each step.
+Efficient J=T*e'W*e=231.323363990188; p-value(df=20)=6.49466348673745e-38
+Separate covariance-adjusted Wald=241.444634021731; p-value(df=20)=6.03433445906198e-40
+Weighted pricing-error covariance rank=20; both tests use 20 degrees of freedom.
