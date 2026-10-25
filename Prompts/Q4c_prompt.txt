@@ -1,0 +1,35 @@
+Please help me write a Python script for Question 4(c), using two-step efficient GMM to estimate the coefficient b in the normalized linear SDF.
+Reuse the data, sample construction, 21 moment conditions, and Newey–West (1987, 1994) HAC estimation procedure from Q4(b). Keep the same sample and all existing methodological choices.
+1. First-step GMM: Use the identity-weighted estimate \hat b_{4b} and the corresponding 21\times21 Newey–West long-run covariance matrix \hat S_1 from Q4(b). Construct the efficient weighting matrix: \hat W=\hat S_1^{-1}.
+If the full covariance matrix was not saved, reconstruct it using the Q4(b) code. Check that it is numerically invertible.
+2. Efficient GMM estimation: Use the same normalized linear SDF: M_t(b)=1-b(R_{w,t}-E[R_w]).
+Define the sample mean excess-return vector \hat{\boldsymbol\mu} and covariance vector \hat{\mathbf c} exactly as in Q4(b).
+Estimate b using the analytical solution:
+\hat b_{4c}=\frac{\hat{\mathbf c}'\hat W\hat{\boldsymbol\mu}}{\hat{\mathbf c}'\hat W\hat{\mathbf c}}.
+Do not use numerical optimization. Keep \hat W fixed in the second step.
+3. Newey–West covariance estimation: Recalculate the long-run covariance matrix \hat S_2 at \hat b_{4c}, using the same Newey–West (1987, 1994) procedure as in Q4(b). Continue accounting for the sampling uncertainty in estimating E[R_w] through the adjusted moment series:
+\tilde{\mathbf g}_t=\mathbf g_t(\hat b_{4c})+\hat b_{4c}\hat{\boldsymbol\mu}(R_{w,t}-\bar R_w).
+Re-select the data-driven bandwidth and report it.
+4. Standard error: Calculate the GMM standard error of \hat b_{4c} using the weighted sandwich variance formula:
+\widehat{\operatorname{Var}}(\hat b_{4c})=\frac1T(\hat G'\hat W\hat G)^{-1}\hat G'\hat W\hat S_2\hat W\hat G(\hat G'\hat W\hat G)^{-1},
+where \hat G=-\hat{\mathbf c}.
+5. Pricing errors and t-statistics: Calculate the pricing errors of all 21 portfolios:
+\hat{\mathbf e}=\hat{\boldsymbol\mu}-\hat b_{4c}\hat{\mathbf c}.
+Account for parameter estimation using the weighted projection matrix:
+\hat P_W=I_{21}-\hat G(\hat G'\hat W\hat G)^{-1}\hat G'\hat W.
+Calculate \hat V_e=\frac1T\hat P_W\hat S_2\hat P_W'
+and use its diagonal elements to calculate individual pricing-error standard errors and t-statistics.
+6. Joint test: Calculate the efficient-GMM overidentification statistic:
+J=T\hat{\mathbf e}'\hat W\hat{\mathbf e}.
+Use 20 degrees of freedom for the asymptotic \chi^2 test and report its p-value.
+For consistency with Q4(b), also calculate the covariance-adjusted Wald statistic using \hat V_e^+, reporting it separately.
+7. Results table: Generate a table in exactly the same format as Q4(b), reporting:
+   - The efficient GMM estimate \hat b_{4c} and its standard error.
+   - Pricing errors and t-statistics for the equity portfolio, 10 BM portfolios, and 10 MOM portfolios.
+   - Joint \chi^2(20) statistic and p-value.
+   - Number of observations and selected Newey–West lag length.
+
+Round all results to four decimal places.
+
+Briefly compare the efficient-GMM estimates, standard errors, pricing errors, and joint-test results with Q4(b).
+Please keep the code straightforward using pandas, numpy, and scipy. Reuse the existing Q4(b) functions and results wherever possible rather than repeating the data processing. 

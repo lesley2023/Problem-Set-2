@@ -432,18 +432,15 @@ necessarily preserve this property.
 
 \clearpage
 \subsection*{(b)}
+Table \ref{tab:q4b-gmm-results} reports the identity-weighted GMM estimation results for the normalized linear SDF using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
+
+Following the same construction of annual real excess returns as in Question 3(e), the estimated SDF coefficient is \(\hat b=1.9356\), with a standard error of \(0.6425\).
+
+Several individual pricing errors are statistically significant, particularly among the momentum portfolios, suggesting that the linear SDF does not price all portfolios equally well.
+
+The joint \(\chi^2(20)\) test yields a statistic of \(231.3234\) and a p-value of \(0.0000\), so we reject the null hypothesis that all 21 pricing errors are jointly zero at conventional significance levels.
 \input{results/q4b_gmm_results.tex}
-\FloatBarrier
-\clearpage
-\input{results/q4b_details.tex}
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{figures/q4b_gmm_results.png}
-  \caption{The identity-weighting GMM objective for the normalized linear SDF
-  and pricing-error $t$-statistics adjusted for estimation of both $b$ and
-  the mean wealth return. The dashed line marks the analytical estimate.}
-  \label{fig:q4b-gmm-results}
-\end{figure}
+
 \FloatBarrier
 
 \end{document}

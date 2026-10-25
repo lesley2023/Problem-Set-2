@@ -228,15 +228,6 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/
 INPUT ./results/q4b_gmm_results.tex
 INPUT ./results/q4b_gmm_results.tex
 INPUT results/q4b_gmm_results.tex
-INPUT ./results/q4b_details.tex
-INPUT ./results/q4b_details.tex
-INPUT results/q4b_details.tex
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT ./figures/q4b_gmm_results.png
-INPUT ./figures/q4b_gmm_results.png
-INPUT ./figures/q4b_gmm_results.png
-INPUT ./figures/q4b_gmm_results.png
-INPUT ./figures/q4b_gmm_results.png
 INPUT solution.aux
 INPUT ./solution.out
 INPUT ./solution.out
@@ -257,5 +248,4 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
