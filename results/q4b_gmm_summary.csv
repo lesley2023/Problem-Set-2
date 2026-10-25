@@ -1,0 +1,11 @@
+Statistic,Value
+b_hat,1.9356
+SE(b_hat),0.6425
+Joint Wald chi-square,231.3234
+Joint p-value (df=20),0.0000
+T,1129.0000
+L,26.0000
+Moment conditions,21.0000
+Mean R_w,1.0877
+Mean SDF,1.0000
+a_hat,3.1054

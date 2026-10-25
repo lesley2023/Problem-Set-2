@@ -1,0 +1,17 @@
+Sample: 1927-12 through 2021-12; T=1129; moments=21
+EQ dates excluded for incomplete inputs: 0
+Annual real-return construction reused unchanged from Q3(e).
+Analytical identity-weighted GMM; covariance divisor T; no parameter bounds.
+Mean R_w=1.08773429928895; b_hat=1.93562825408808; a_hat=3.10544924264438
+Mean SDF=1; SE(b_hat)=0.642518292197438
+FOC G' gbar=1.127570259384925e-17; objective=0.0238545491267438
+HAC uses g_t(b_hat) + b_hat * mu_hat * (R_wt - mean_R_w), centered.
+Bandwidth details: {'pilot': 7, 's0': np.float64(371.9580873089694), 's1': np.float64(1161.7049479992438), 'constant': np.float64(2.4458298350895964), 'bandwidth': np.float64(25.4677680408845)}; common lag L=26
+Smallest HAC eigenvalue=0.00181859606527402
+Pricing-error covariance rank=20; joint df=20
+Joint Wald chi-square(20)=231.323363990191; p-value=6.49466348672934e-38
+RF Mean signed difference: -3.2238066504559e-06
+RF Mean absolute difference: 1.17544935041372e-05
+RF Root mean squared difference: 3.71275186327688e-05
+RF Maximum absolute difference: 0.00020251839347063
+RF Correlation: 0.999999519718381
