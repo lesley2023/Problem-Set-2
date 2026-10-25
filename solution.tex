@@ -367,4 +367,67 @@ After restricting the sample, the estimated \(\hat\gamma\) increases from 1.9061
 \input{results/q3_sample_comparison.tex}
 \FloatBarrier
 
+\clearpage
+\section*{Question 4}
+\subsection*{(a)}
+
+% Transcribed from Q4a_Handwritten.pdf; the handwritten steps are preserved.
+By applying a first-order Taylor approximation, we have
+\begin{align*}
+M_{t+1}
+&=f(F_{t+1},\theta) \\
+&\approx f(E_t[F],\theta)
++\partial_F f(E_t[F],\theta)'\bigl(F_{t+1}-E_t[F]\bigr)
+\equiv M_{t+1}^{\mathrm{linear}}.
+\end{align*}
+Since $M_{t+1}=R_{w,t+1}^{-\gamma}$,
+\[
+F_{t+1}=R_{w,t+1},\qquad \theta=\gamma,\qquad
+f(F,\gamma)=F^{-\gamma}.
+\]
+Substituting the actual form, we have
+\begin{align*}
+f\bigl(E_t[R_{w,t+1}],\gamma\bigr)
+&=\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}, \\
+f'\bigl(E_t[R_{w,t+1}],\gamma\bigr)
+&=-\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}.
+\end{align*}
+\begin{align*}
+M_{t+1}=R_{w,t+1}^{-\gamma}
+&\approx \bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}
+-\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}
+\bigl(R_{w,t+1}-E_t[R_{w,t+1}]\bigr) \\
+&=\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}
+-\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}R_{w,t+1}
++\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma} \\
+&=(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}
+-\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}R_{w,t+1}.
+\end{align*}
+\[
+a_t=(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma},
+\qquad
+b_t=\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}.
+\]
+Thus,
+\[
+M_{t+1}\approx a_t-b_tR_{w,t+1},\qquad
+a_t=(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma},\qquad
+b_t=\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}.
+\]
+For $\gamma>0$, $a_t-b_tR_{w,t+1}<0$ if
+\begin{align*}
+(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}
+-\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}R_{w,t+1}&<0, \\
+(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}
+&<\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}R_{w,t+1}, \\
+R_{w,t+1}
+&>\frac{(1+\gamma)\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma}}
+{\gamma\bigl(E_t[R_{w,t+1}]\bigr)^{-\gamma-1}}
+=\frac{1+\gamma}{\gamma}E_t[R_{w,t+1}].
+\end{align*}
+Thus, the linear SDF is not guaranteed to remain positive, unlike the original
+nonlinear SDF. This is a disadvantage because strict positivity of an SDF is
+sufficient to ensure no-arbitrage pricing. The linear approximation does not
+necessarily preserve this property.
+
 \end{document}
