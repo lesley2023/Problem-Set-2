@@ -1,0 +1,91 @@
+Please help me write a Python script to estimate the risk premium \lambda and pricing errors \alpha_j using Fama–MacBeth regressions for the linear beta pricing model in Question 4(e).
+Reuse the data construction, sample alignment, and Newey–West (1987, 1994) HAC estimation procedure from Q4(b) and Q4(d). 
+1. Use the same datasets and return construction as Q4(d).
+Reuse the equity market gross return R_{w,t} and the 21 annual real excess-return series constructed in Q4(b) and Q4(d):
+R_{w,t}=e^{r_{e,t}},
+R_{f,t}=e^{r_{f,t}},
+xR_{w,t}=R_{w,t}-R_{f,t}.
+The 21 excess-return series include the equity portfolio, 10 book-to-market (BM) decile portfolios, and 10 momentum (MOM) decile portfolios.
+These are annual real returns observed monthly.
+Use the same construction of the annual real excess returns for BM and MOM portfolios as in Q4(b), including 12-month compounding of nominal returns and deflation using the corresponding CPI inflation factor.
+Keep exactly the same final estimation sample as Q4(d). Report the first and last dates and the number of observations.
+2. Define the linear beta pricing model.
+The SDF is M_t=a-bR_{w,t}.
+The corresponding linear beta pricing model is
+E[xR_j]=\lambda\beta_j,
+where \beta_j=\frac{\operatorname{Cov}(xR_j,R_w)}{\operatorname{Var}(R_w)}.
+For consistency with Q4(d), use the gross wealth return R_{w,t} as the factor.
+3. First pass: Estimate the betas using time-series regressions.
+For each of the 21 portfolios, estimate the time-series regression:
+xR_{j,t}=c_j+\beta_jR_{w,t}+\varepsilon_{j,t}.
+Use OLS to estimate the beta of each portfolio:
+\hat\beta_j=\frac{\widehat{\operatorname{Cov}}(xR_j,R_w)}{\widehat{\operatorname{Var}}(R_w)}.
+Reuse the beta estimates obtained in Q4(d) if they were estimated using the same factor and sample.
+Use constant betas estimated over the full sample for the main analysis. Do not introduce an arbitrary rolling window.
+Define the 21\times1 beta vector:
+\hat{\boldsymbol\beta}=
+\begin{pmatrix}
+\hat\beta_{Equity}\\
+\hat\beta_{BM1}\\
+\vdots\\
+\hat\beta_{BM10}\\
+\hat\beta_{MOM1}\\
+\vdots\\
+\hat\beta_{MOM10}
+\end{pmatrix}.
+
+Report the estimated betas and verify that they are consistent with Q4(d).
+
+4. Second pass: Estimate the monthly Fama–MacBeth cross-sectional regressions.
+For each month t, estimate the cross-sectional regression:
+xR_{j,t}=\lambda_t\hat\beta_j+\alpha_{j,t}.
+Use the 21 portfolios in the cross-section.
+The OLS estimator is
+\hat\lambda_t=\frac{\sum_{j=1}^{21}\hat\beta_jxR_{j,t}}{\sum_{j=1}^{21}\hat\beta_j^2}.
+Equivalently, \hat\lambda_t=(\hat{\boldsymbol\beta}'\hat{\boldsymbol\beta})^{-1}\hat{\boldsymbol\beta}'\mathbf{xR}_t.
+For each portfolio, calculate the monthly pricing error:
+\hat\alpha_{j,t}=xR_{j,t}-\hat\lambda_t\hat\beta_j.
+Repeat this cross-sectional regression for every month in the sample.
+At the end, obtain a time series of \hat\lambda_t and 21 time series of \hat\alpha_{j,t}.
+Verify that the cross-sectional OLS first-order condition holds for every month:
+\hat{\boldsymbol\beta}'\hat{\boldsymbol\alpha}_t\approx0.
+Save the monthly estimates of \hat\lambda_t and \hat\alpha_{j,t} to CSV files.
+
+5. Estimate the average risk premium and its Newey–West standard error.
+Estimate the unconditional risk premium as the time-series average of the monthly Fama–MacBeth estimates:
+\hat\lambda=\frac1T\sum_{t=1}^T\hat\lambda_t.
+Following Question 4(e), calculate its standard error using a time-series regression of \hat\lambda_t on a constant:
+\hat\lambda_t=\lambda+u_t^\lambda.
+Use Newey and West (1987, 1994) HAC standard errors.
+Center the residual series before estimating its long-run variance.
+Use the Bartlett weighting function:
+w_\ell=1-\frac{\ell}{L+1},
+where L is the number of autocorrelation lags.
+Select L using the Newey and West (1994) data-driven procedure:
+L=\mathrm{const}\cdot T^{1/3},
+where the optimal constant is estimated using Equation (2.2) of Newey and West (1994).
+Use denominator T-\ell when calculating sample autocovariances, and apply ceiling rounding to the pilot truncation and final bandwidth, consistent with the previous questions.
+Do not assume a fixed lag length in advance.
+Calculate and report \hat\lambda, its Newey–West standard error, and the selected lag length.
+
+6. Estimate the average pricing errors and their Newey–West t-statistics.
+For each portfolio j, calculate the average Fama–MacBeth pricing error:
+\hat\alpha_j=\frac1T\sum_{t=1}^T\hat\alpha_{j,t}.
+Calculate the standard error of each \hat\alpha_j using a time-series regression of the monthly pricing-error series on a constant:
+\hat\alpha_{j,t}=\alpha_j+u_{j,t}^{\alpha}.
+For each portfolio, calculate the Newey–West (1987, 1994) HAC standard error using the same Bartlett weights and data-driven bandwidth-selection procedure as in Step 5.
+Use denominator T-\ell for the sample autocovariances.
+Calculate the t-statistic:
+t_{\alpha_j}=\frac{\hat\alpha_j}{SE(\hat\alpha_j)}.
+Report the estimated pricing error, its Newey–West standard error, t-statistic, and selected lag length for each of the 21 portfolios.
+These pricing errors are the time-series averages of the monthly cross-sectional residuals.
+
+7. Generate the results table reporting:
+- The Fama–MacBeth estimate \hat\lambda and its Newey–West standard error.
+- The estimated \hat\alpha_j and its t-statistic for each of the 21 portfolios.
+- The number of observations in the estimation sample.
+- The selected Newey–West lag length for estimating \lambda.
+
+Round all results to four decimal places. Keep the equity, BM, and MOM portfolio labels clearly identified. Use a table format consistent with Q4(b), Q4(c), and Q4(d), with the estimated \lambda and its standard error in the upper panel and the individual portfolio pricing errors and t-statistics in the lower panel.
+
+Please keep the code straightforward and use pandas, numpy, and scipy. Reuse the existing data processing, time-series beta estimation, and Newey–West estimation functions from Q4(b) and Q4(d) wherever possible.

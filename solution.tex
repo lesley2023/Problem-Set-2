@@ -458,18 +458,17 @@ The efficient-GMM \(J\)-test yields a \(\chi^2(20)\) statistic of \(231.3234\) a
 
 \clearpage
 \subsection*{(d)}
+Table \ref{tab:q4d-regression-results} reports the time-series regression results for the linear beta pricing model using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
+
+Following the same construction of annual real excess returns as in Question 4(b), the estimated mean gross wealth return is \(\hat\lambda=1.0877\), with a Newey–West standard error of \(0.0178\).
+
+All 21 individual regression intercepts are statistically significant, suggesting that the zero-intercept restrictions are rejected across the portfolios.
+
+The GRS test yields an \(F(21,1107)\) statistic of \(1589.2178\) and a p-value of \(0.0000\), so we reject the null hypothesis that all 21 regression intercepts are jointly zero at conventional significance levels.
+
+However, since the factor is the gross wealth return rather than an excess return, these regression intercepts do not necessarily coincide with the pricing errors implied by the original linear SDF. Therefore, the GRS rejection should be interpreted as a rejection of the zero-intercept restrictions rather than direct evidence against the SDF pricing conditions.
 \input{results/q4d_regression_results.tex}
-\FloatBarrier
-\clearpage
-\input{results/q4d_details.tex}
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{figures/q4d_regression_results.png}
-  \caption{Intercept estimates and HAC $t$-statistics from the requested
-  regressions of annual real excess returns on a constant and gross $R_w$.
-  Error bars show one HAC standard error.}
-  \label{fig:q4d-regression-results}
-\end{figure}
+
 \FloatBarrier
 
 \end{document}

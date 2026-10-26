@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1793015892.13225 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1793015892.91484 0
-  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1793015890.28493 21507 9b6f82b9a48a01c305481795d1f5398d ""
+["pdflatex"] 1793016518.1166 "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" "solution.pdf" "solution" 1793016518.70118 0
+  "/Users/lesleywangmac8t/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Coursework/AU26 BUSFIN 8200 Asset Pricing/AssetPricing8200_Pset2/solution.tex" 1793016517.40779 22247 a1deec530efe4f7277e23e3b3163f9dc ""
   "/Users/lesleywangmac8t/Library/texmf/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -107,7 +107,6 @@
   "figures/q2a_bm_sdf_coefficients.png" 1792716290.19629 93540 7b1b636b138146d62848a77baf9fe44e ""
   "figures/q2b_mom_sdf_coefficients.png" 1792716678.91545 96744 c9b19189e8c9d062c44189bdaed4fd41 ""
   "figures/q2c_combined_sdf_coefficients.png" 1792718117.16108 108916 75cd018fbe6558832232a6f1f7bcfade ""
-  "figures/q4d_regression_results.png" 1793015891.28511 130597 63d6342d18c3d0cf2eb20b551d6b7829 ""
   "results/q2a_bm_parameters.tex" 1792716290.06586 668 9762a1fa6c294905718226c35d088962 ""
   "results/q2b_bm_mom_correlation.tex" 1792716678.77204 226 fb432b995fcb661d0ed7ad1808b4624a ""
   "results/q2b_mom_parameters.tex" 1792716678.7646 670 e57b5daa02dd1c5683bd596007661417 ""
@@ -122,11 +121,10 @@
   "results/q3e_gmm_results.tex" 1792870220.00135 1555 3bf5cdfc79cc0838e9a8353196d432d3 ""
   "results/q4b_gmm_results.tex" 1792964106.08764 1581 32516190e342628549ead76b06d1e96a ""
   "results/q4c_gmm_results.tex" 1792967161.48491 1705 9d2125f324a068707bd49639927c1f0e ""
-  "results/q4d_details.tex" 1793015891.08111 1573 01d417e5b3e1e89236a70d8e394e148b ""
   "results/q4d_regression_results.tex" 1793015891.08085 2181 ac18f277581ed17a49a97a56a621e700 ""
-  "solution.aux" 1793015892.8731 11268 f94720ace64ae6e735648d87a517d07e "pdflatex"
-  "solution.out" 1793015892.27607 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "solution.tex" 1793015890.28493 21507 9b6f82b9a48a01c305481795d1f5398d ""
+  "solution.aux" 1793016518.66142 10748 3e0c719c93a582fd5cf0e23e12e33fda "pdflatex"
+  "solution.out" 1793016518.25675 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "solution.tex" 1793016517.40779 22247 a1deec530efe4f7277e23e3b3163f9dc ""
   (generated)
   "solution.aux"
   "solution.log"
