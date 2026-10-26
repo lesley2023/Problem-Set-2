@@ -1,0 +1,45 @@
+\begin{table}[!htbp]
+  \centering
+  \small
+  \caption{Fama--MacBeth regressions with fixed full-sample Q4(d) betas,
+  December 1927 through December 2021.
+  Cross-sectional regressions have no intercept. Values are rounded to four decimal places;
+  standard errors use Newey--West HAC on the premium and pricing-error series.}
+  \label{tab:q4e-fama-macbeth-results}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Statistic & \multicolumn{5}{r}{Value} \\
+    \midrule
+    Fama--MacBeth $\hat\lambda$ & \multicolumn{5}{r}{0.0818} \\
+    Newey--West $SE(\hat\lambda)$ & \multicolumn{5}{r}{0.0178} \\
+    Observations $T$ & \multicolumn{5}{r}{1129} \\
+    HAC lag for $\hat\lambda$ & \multicolumn{5}{r}{26} \\
+    \midrule
+    Portfolio & $\hat\alpha$ & $SE(\hat\alpha)$ & $t_\alpha$ & $\hat\beta$ & $L_j$ \\
+    \midrule
+    Equity & 0.0025 & 0.0043 & 0.5783 & 0.9960 & 26 \\
+    \addlinespace
+    BM1 & -0.0041 & 0.0107 & -0.3780 & 1.0390 & 26 \\
+    BM2 & 0.0168 & 0.0085 & 1.9873 & 0.9215 & 26 \\
+    BM3 & 0.0064 & 0.0060 & 1.0604 & 0.9601 & 26 \\
+    BM4 & -0.0023 & 0.0065 & -0.3568 & 1.0939 & 26 \\
+    BM5 & 0.0101 & 0.0069 & 1.4724 & 1.0275 & 27 \\
+    BM6 & 0.0149 & 0.0063 & 2.3548 & 1.0866 & 26 \\
+    BM7 & -0.0027 & 0.0075 & -0.3621 & 1.1345 & 26 \\
+    BM8 & 0.0178 & 0.0081 & 2.2004 & 1.2480 & 26 \\
+    BM9 & 0.0252 & 0.0096 & 2.6328 & 1.3323 & 25 \\
+    BM10 & 0.0069 & 0.0145 & 0.4721 & 1.5496 & 26 \\
+    \addlinespace
+    MOM1 & -0.1076 & 0.0140 & -7.7042 & 1.4675 & 25 \\
+    MOM2 & -0.0484 & 0.0090 & -5.3779 & 1.3009 & 24 \\
+    MOM3 & -0.0275 & 0.0090 & -3.0392 & 1.0871 & 27 \\
+    MOM4 & -0.0131 & 0.0067 & -1.9440 & 1.1289 & 25 \\
+    MOM5 & 0.0005 & 0.0066 & 0.0705 & 1.0047 & 26 \\
+    MOM6 & 0.0002 & 0.0052 & 0.0324 & 1.0603 & 26 \\
+    MOM7 & 0.0163 & 0.0078 & 2.0910 & 0.9580 & 26 \\
+    MOM8 & 0.0291 & 0.0067 & 4.3693 & 0.9843 & 24 \\
+    MOM9 & 0.0356 & 0.0084 & 4.2538 & 1.0263 & 25 \\
+    MOM10 & 0.0704 & 0.0134 & 5.2659 & 1.0922 & 25 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

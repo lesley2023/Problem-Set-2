@@ -1,0 +1,9 @@
+Sample: 1927-12 through 2021-12; T=1129; assets=21
+Full-sample fixed betas reused from Q4(d), verified within 1e-12. Factor=gross R_w.
+Monthly cross-sectional OLS: beta regressor only; no intercept; no rolling window.
+Maximum absolute monthly beta'alpha_t=1.017241846312800e-14
+lambda_hat=0.0818168666124345; HAC SE=0.0178153100002764
+Lambda HAC variance=0.358327970288316; L=26; bandwidth={'pilot': 7, 's0': np.float64(0.43134677391452936), 's1': np.float64(1.3237390704660796), 'constant': np.float64(2.41736504655871), 'bandwidth': np.float64(25.171371856147108)}
+Mean beta'alpha=3.608224830031759e-16
+HAC for each constant-only series: centered residuals, Bartlett, T-lag divisor, ceiling pilot/final lags.
+Inference follows the requested mean-series HAC calculation with fixed estimated betas.

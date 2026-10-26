@@ -1,0 +1,12 @@
+The sample contains 1,129 monthly observations of annual real returns from December 1927 through December 2021, identical to Q4(d).
+All 21 fixed full-sample betas are reused from Q4(d) and verified against its original first-pass code.
+Each monthly cross-section uses one beta regressor and no intercept.
+The pricing errors are averages of the monthly cross-sectional residuals.
+The maximum absolute monthly OLS first-order-condition residual is $1.017\times10^{-14}$.
+Standard errors follow the specified constant-only time-series HAC calculation, with fixed estimated betas.
+The premium-series pilot is $m=7$, $C=2.4174$,
+and $L=\lceil CT^{1/3}\rceil=\lceil 25.1714\rceil=26$.
+Each pricing-error series selects its own lag, reported in the table.
+The monthly premium and all 21 monthly pricing-error series are saved in
+\texttt{results/q4e\_monthly\_risk\_premia.csv} and
+\texttt{results/q4e\_monthly\_pricing\_errors.csv}, respectively.
