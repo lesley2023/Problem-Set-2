@@ -231,6 +231,17 @@ INPUT results/q4b_gmm_results.tex
 INPUT ./results/q4c_gmm_results.tex
 INPUT ./results/q4c_gmm_results.tex
 INPUT results/q4c_gmm_results.tex
+INPUT ./results/q4d_regression_results.tex
+INPUT ./results/q4d_regression_results.tex
+INPUT results/q4d_regression_results.tex
+INPUT ./results/q4d_details.tex
+INPUT ./results/q4d_details.tex
+INPUT results/q4d_details.tex
+INPUT ./figures/q4d_regression_results.png
+INPUT ./figures/q4d_regression_results.png
+INPUT ./figures/q4d_regression_results.png
+INPUT ./figures/q4d_regression_results.png
+INPUT ./figures/q4d_regression_results.png
 INPUT solution.aux
 INPUT ./solution.out
 INPUT ./solution.out

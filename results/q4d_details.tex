@@ -1,0 +1,23 @@
+The sample contains 1,129 monthly observations of annual real returns from December 1927 through December 2021, identical to Q4(b).
+The requested constant-only regression uses gross $R_w$ and reports its sample mean as $\hat\lambda$.
+The lambda-series pilot is $m=7$, $C=2.4496$,
+and $L=\lceil CT^{1/3}\rceil=\lceil 25.5067\rceil=26$.
+Each portfolio regression selects its own common lag from the sum of the two centered score components.
+All HAC calculations retain Bartlett weights, $T-\ell$ divisors, and ceiling pilot/final rounding.
+
+The regression intercepts and the normalized-SDF pricing errors have different definitions:
+\[
+\hat\alpha_j^{OLS}=\hat\mu_j-\hat\beta_j\bar R_w,\qquad
+\hat e_j^{SDF}=\hat\mu_j-\hat\beta_j\hat\lambda_{SDF},\qquad
+\hat\lambda_{SDF}=\hat b_{4b}\widehat{\operatorname{Var}}(R_w).
+\]
+Here $\bar R_w=1.087734$, whereas $\hat\lambda_{SDF}=0.081817$.
+The reported alphas are the requested gross-factor OLS intercepts, not the Q4(b) SDF errors.
+
+At the 5\% level, 21 of the 21 intercepts have two-sided asymptotic-normal HAC $p$-values below 0.05.
+The conventional GRS reference yields $p\approx 1.986\times10^{-807}$
+and rejects the joint zero-intercept null at that level.
+The residual covariance has full rank 21 and condition number 750.09;
+all 21 assets are retained, and its ordinary inverse is used with divisor $T$.
+The GRS $F$ calibration relies on the conventional GRS assumptions; it is separate from
+the HAC corrections used for individual intercepts. Annual returns observed in overlapping monthly windows have serial dependence.

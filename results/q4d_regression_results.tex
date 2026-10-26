@@ -1,0 +1,48 @@
+\begin{table}[!htbp]
+  \centering
+  \small
+  \caption{Time-series regressions on gross $R_w$,
+  December 1927 through December 2021.
+  Values are rounded to four decimal places. Individual intercept tests use HAC;
+  the GRS test uses its conventional $F$ reference.}
+  \label{tab:q4d-regression-results}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Statistic & \multicolumn{5}{r}{Value} \\
+    \midrule
+    Requested $\hat\lambda=\bar R_w$ & \multicolumn{5}{r}{1.0877} \\
+    Newey--West $SE(\hat\lambda)$ & \multicolumn{5}{r}{0.0178} \\
+    Conventional GRS $F$ statistic & \multicolumn{5}{r}{1589.2178} \\
+    GRS degrees of freedom & \multicolumn{5}{r}{(21, 1107)} \\
+    GRS $p$-value & \multicolumn{5}{r}{0.0000} \\
+    Observations $T$ & \multicolumn{5}{r}{1129} \\
+    HAC lag for $\hat\lambda$ & \multicolumn{5}{r}{26} \\
+    \midrule
+    Portfolio & $\hat\alpha$ & $SE(\hat\alpha)$ & $t_\alpha$ & $\hat\beta$ & $L_j$ \\
+    \midrule
+    Equity & -0.9994 & 0.0327 & -30.5350 & 0.9960 & 28 \\
+    \addlinespace
+    BM1 & -1.0492 & 0.0435 & -24.1289 & 1.0390 & 27 \\
+    BM2 & -0.9101 & 0.0571 & -15.9392 & 0.9215 & 26 \\
+    BM3 & -0.9594 & 0.0337 & -28.4702 & 0.9601 & 27 \\
+    BM4 & -1.1027 & 0.1157 & -9.5297 & 1.0939 & 26 \\
+    BM5 & -1.0235 & 0.0870 & -11.7626 & 1.0275 & 27 \\
+    BM6 & -1.0782 & 0.1193 & -9.0359 & 1.0866 & 26 \\
+    BM7 & -1.1439 & 0.1427 & -8.0185 & 1.1345 & 26 \\
+    BM8 & -1.2376 & 0.1444 & -8.5710 & 1.2480 & 26 \\
+    BM9 & -1.3150 & 0.1683 & -7.8151 & 1.3323 & 25 \\
+    BM10 & -1.5519 & 0.2222 & -6.9844 & 1.5496 & 26 \\
+    \addlinespace
+    MOM1 & -1.5837 & 0.1218 & -13.0003 & 1.4675 & 25 \\
+    MOM2 & -1.3570 & 0.1446 & -9.3872 & 1.3009 & 23 \\
+    MOM3 & -1.1210 & 0.0856 & -13.0936 & 1.0871 & 26 \\
+    MOM4 & -1.1487 & 0.1345 & -8.5371 & 1.1289 & 25 \\
+    MOM5 & -1.0102 & 0.0844 & -11.9628 & 1.0047 & 25 \\
+    MOM6 & -1.0664 & 0.1006 & -10.6019 & 1.0603 & 26 \\
+    MOM7 & -0.9474 & 0.0492 & -19.2655 & 0.9580 & 27 \\
+    MOM8 & -0.9611 & 0.0339 & -28.3310 & 0.9843 & 25 \\
+    MOM9 & -0.9968 & 0.0408 & -24.4483 & 1.0263 & 26 \\
+    MOM10 & -1.0282 & 0.1189 & -8.6497 & 1.0922 & 25 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

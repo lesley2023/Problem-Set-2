@@ -1,0 +1,15 @@
+Statistic,Value
+lambda_hat (mean gross R_w),1.0877
+SE(lambda_hat),0.0178
+Conventional GRS F,1589.2178
+GRS p-value,0.0000
+T,1129.0000
+Lambda HAC lag,26.0000
+GRS numerator df,21.0000
+GRS denominator df,1107.0000
+GRS log p-value,-1857.4999
+Residual covariance rank,21.0000
+Residual covariance condition number,750.0888
+Factor variance,0.0423
+lambda_SDF (Q4b),0.0818
+Q4b b_hat,1.9356

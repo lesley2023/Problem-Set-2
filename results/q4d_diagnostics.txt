@@ -1,0 +1,12 @@
+Sample: 1927-12 through 2021-12; T=1129; assets=21; factor=gross R_w
+Requested lambda=mean R_w=1.08773429928895; HAC SE=0.0178205240074234
+Lambda HAC variance=0.358537744690145; lag=26; bandwidth={'pilot': 7, 's0': np.float64(0.41967741025567695), 's1': np.float64(1.3137528034205834), 'constant': np.float64(2.449573026439381), 'bandwidth': np.float64(25.50674488533266)}
+Maximum absolute sample OLS score mean=2.34877197437635e-16
+Residual covariance: divisor T; rank=21; condition=750.088821162059
+Conventional GRS F=1589.21779014361; df=(21,1107)
+GRS float p-value=0; natural-log p-value=-1857.49993436863
+If the float p-value is zero, the finite log tail retains its magnitude.
+Factor variance (ddof=0)=0.0422688945770635; Q4b b=1.93562825408808; lambda_SDF=0.0818168666124345
+Individual HAC normal p<0.05 count=21 of 21.
+OLS alpha=mean excess-beta*mean gross R_w; SDF error=mean excess-beta*lambda_SDF.
+GRS uses the conventional contemporaneous residual covariance and F reference, not a HAC joint test.
