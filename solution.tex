@@ -473,8 +473,11 @@ However, since the factor is the gross wealth return rather than an excess retur
 
 \clearpage
 \subsection*{(e)}
+Table \ref{tab:q4e-fama-macbeth-results} reports the Fama–MacBeth regression results for the linear beta pricing model using the equity portfolio and 20 book-to-market (BM) and momentum (MOM) decile portfolios.
+
+Using full-sample betas estimated from the time-series regressions in Question 4(d), the estimated risk premium is \(\hat\lambda=0.0818\), with a Newey–West standard error of \(0.0178\), indicating a statistically significant positive risk premium.
+
+Several individual pricing errors are statistically significant, particularly among the momentum portfolios, suggesting that the linear beta pricing model does not explain all portfolio returns equally well. Specifically, the low-momentum portfolios tend to have negative pricing errors, while the high-momentum portfolios tend to have positive pricing errors.
 \input{results/q4e_fama_macbeth_results.tex}
-\FloatBarrier
-\input{results/q4e_details.tex}
 
 \end{document}
