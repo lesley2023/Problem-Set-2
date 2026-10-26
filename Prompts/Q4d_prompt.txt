@@ -1,0 +1,131 @@
+Please help me write a Python script to estimate the risk premium \lambda and the pricing errors \alpha_j using time-series regressions for the linear beta pricing model in Question 4(d).
+
+Reuse the data construction, sample alignment, and Newey–West (1987, 1994) HAC estimation procedure from Q4(b). 
+1. Use the same datasets and return construction as Q4(b).
+Read datasets/EQ Dataset.csv to obtain the log equity returns re and log risk-free returns rf. Construct:
+   R_{w,t}=e^{r_{e,t}}, R_{f,t}=e^{r_{f,t}}
+   xR_{w,t}=R_{w,t}-R_{f,t}.
+These are annual real returns observed monthly.
+Reuse the 10 book-to-market (BM) and 10 momentum (MOM) portfolio excess returns from Q4(b).
+As in Q4(b), construct overlapping annual nominal portfolio and risk-free gross returns by compounding 12 consecutive monthly returns, then deflate the annual nominal excess returns using the corresponding 12-month CPI inflation factor:
+\Pi_t=\frac{CPI_t}{CPI_{t-12}},
+xR_{j,t}^{real}=\frac{R_{j,t}^{nominal}-R_{f,t}^{nominal}}{\Pi_t}.
+Merge the 20 annual real excess-return series with the EQ Dataset using the annual return ending dates.
+Keep the same final estimation sample as Q4(b), including only observations for which all 21 excess returns and R_{w,t} are available.
+Report the first and last dates and the number of observations in the final sample.
+
+2. Define the linear beta pricing model.
+The SDF is
+M_t=a-bR_{w,t}.
+The corresponding beta pricing model is
+E[xR_j]=\lambda\beta_j,
+where \beta_j=\frac{\operatorname{Cov}(xR_j,R_w)}{\operatorname{Var}(R_w)}.
+Use the gross wealth return R_{w,t} as the factor for the requested time-series regressions.
+3. Estimate \lambda and its standard error.
+Estimate the time-series regression:
+R_{w,t}=\lambda+u_t.
+Estimate \lambda using OLS:
+\hat\lambda=\frac1T\sum_{t=1}^T R_{w,t}.
+Calculate the standard error of \hat\lambda using Newey and West (1987, 1994) HAC estimation.
+Center the regression residual series when estimating its long-run variance.
+Use the Newey and West (1987) Bartlett weighting function:
+w_\ell=1-\frac{\ell}{L+1}.
+Select L using the data-driven procedure recommended by Newey and West (1994):
+L=\mathrm{const}\cdot T^{1/3},
+where the optimal constant is estimated using Equation (2.2) of Newey and West (1994).
+Use denominator T-\ell when calculating sample autocovariances, and apply ceiling rounding to the pilot truncation and final bandwidth.
+Do not assume a fixed lag length in advance.
+Report \hat\lambda, its Newey–West standard error, and the selected bandwidth.
+
+4. Estimate the individual time-series factor regressions.
+For each portfolio j, estimate the OLS regression:
+xR_{j,t}=\alpha_j+\beta_jR_{w,t}+\varepsilon_{j,t}.
+Use all 21 portfolios from Q4(b), comprising the equity portfolio, 10 BM portfolios, and 10 MOM portfolios.
+For each portfolio, estimate:
+\hat\alpha_j,\qquad \hat\beta_j.
+Calculate the fitted values and residuals:
+\hat\varepsilon_{j,t}=xR_{j,t}-\hat\alpha_j-\hat\beta_jR_{w,t}.
+Use the same estimation sample for every regression.
+Report the estimated \hat\alpha_j and \hat\beta_j, keeping the portfolio labels clearly identified.
+
+5. Calculate Newey–West standard errors and t-statistics for the individual alphas.
+For each portfolio regression, calculate the Newey–West (1987, 1994) HAC covariance matrix of the OLS coefficient estimates.
+Define
+z_t=\begin{pmatrix}
+1\\
+R_{w,t}
+\end{pmatrix}.
+Construct the regression score series:
+h_{j,t}=z_t\hat\varepsilon_{j,t}.
+Let \hat Q=\frac1T\sum_{t=1}^T z_tz_t'.
+Estimate the 2\times2 long-run covariance matrix \hat S_j of the centered score series using the same Newey–West (1987, 1994) procedure as before.
+Use the Bartlett weighting function and the data-driven bandwidth selection procedure. For each regression, select a common bandwidth for its two-dimensional score vector using the sum of its centered score components, consistent with the common-lag approach used in Q4(b).
+Use denominator T-\ell for the sample autocovariances.
+Calculate
+\widehat{\operatorname{Var}}
+\begin{pmatrix}
+\hat\alpha_j\\
+\hat\beta_j
+\end{pmatrix}
+= \frac1T\hat Q^{-1}\hat S_j\hat Q^{-1}.
+Obtain the standard error of \hat\alpha_j from the first diagonal element of this covariance matrix.
+Calculate the individual alpha t-statistic:
+t_{\alpha_j}=\frac{\hat\alpha_j}{SE(\hat\alpha_j)}.
+Report each \hat\alpha_j, its standard error, t-statistic, and selected Newey–West lag length.
+
+6. Conduct the joint Gibbons–Ross–Shanken (GRS) test.
+Test the null hypothesis that all individual regression intercepts are jointly zero:
+H_0: \alpha_1=\alpha_2=\cdots=\alpha_N=0.
+Construct the N\times1 vector of estimated intercepts:
+\hat{\boldsymbol\alpha}=
+\begin{pmatrix}
+\hat\alpha_1\\
+\vdots\\
+\hat\alpha_N
+\end{pmatrix}.
+Construct the T\times N matrix of OLS residuals and estimate their contemporaneous covariance matrix:
+\hat\Sigma_\varepsilon=\frac1T\sum_{t=1}^T\hat{\boldsymbol\varepsilon}_t\hat{\boldsymbol\varepsilon}_t'.
+Use the divisor T consistently with the following conventional GRS statistic. This residual covariance calculation is separate from the Newey–West HAC autocovariance convention used for the individual regression t-statistics.
+For the single factor F_t=R_{w,t}, calculate
+\bar F=\frac1T\sum_{t=1}^T F_t
+and \hat\sigma_F^2=\frac1T\sum_{t=1}^T(F_t-\bar F)^2.
+Calculate the GRS statistic:
+GRS=\frac{T-N-K}{N}
+\frac{
+\hat{\boldsymbol\alpha}'
+\hat\Sigma_\varepsilon^{-1}
+\hat{\boldsymbol\alpha}
+}{
+1+\bar F^2/\hat\sigma_F^2
+},
+where K=1 factor.
+If all 21 portfolio regressions are included and the residual covariance matrix has full rank, use N=21 and the reference distribution
+GRS\sim F_{21,T-22}
+under the conventional GRS null assumptions.
+Check the numerical rank and condition number of the residual covariance matrix before computing the statistic. Do not silently apply a pseudoinverse or remove portfolios if the matrix is singular. Explain any necessary changes to the test-asset set.
+Calculate the p-value using the appropriate F-distribution.
+Report the GRS statistic, degrees of freedom, and p-value.
+7. Check the interpretation of the pricing errors.
+The linear SDF implies
+E[xR_j]=b\operatorname{Cov}(R_w,xR_j).
+Equivalently,
+E[xR_j]=\lambda_{\mathrm{SDF}}\beta_j,
+\qquad
+\lambda_{\mathrm{SDF}}
+=b\operatorname{Var}(R_w).
+However, the intercept in the requested time-series regression on the gross return is
+\alpha_j^{OLS}=E[xR_j]-\beta_jE[R_w].
+These two pricing-error definitions are not necessarily identical.
+Explicitly flag this distinction in the output instead of assuming that the gross-return regression intercepts are automatically the pricing errors implied by the SDF.
+8. Generate the results table.
+Generate a table reporting:
+- The estimated \hat\lambda and its Newey–West standard error.
+- The estimated \hat\alpha_j and its t-statistic for each of the 21 portfolios.
+- The GRS test statistic, degrees of freedom, and p-value.
+- The number of observations in the estimation sample.
+- The selected Newey–West bandwidth for estimating \lambda.
+Round all results to four decimal places.
+Keep the equity, BM, and MOM portfolio labels clearly identified.
+Use a table format consistent with Q4(b) and Q4(c), with the estimated \lambda and GRS results in the upper panel and the individual portfolio alpha estimates and t-statistics in the lower panel.
+Briefly describe whether individual regression intercepts are statistically significant and whether the GRS test rejects the joint null hypothesis.
+Please keep the code straightforward and use pandas, numpy, and scipy. Reuse the existing data processing and Newey–West estimation functions from Q4(b) wherever possible.
